@@ -158,7 +158,56 @@ $objet->afficherTitre();    // -> ON PASSE PAR L'OBJET POUR APPELER LA METHODE
     => PLUS FACILE POUR LE DEV
     => PLUS EFFICACE CAR PHP NE CHARGERA LE CODE QUE SI IL EN A BESOIN
 
-    
+## TRANSITION ENTRE PROGRAMMATION FONCTIONNELLE ET PROGRAMMATION ORIENTE OBJET
+
+    PROGRAMMATION PAR CLASSE (OU METHODES static)
+
+```php
+<?php
+
+class Model
+{
+    // METHODES static => METHODE DE CLASSE
+    static function connexionMysql ()
+    {
+
+    }
+
+    // METHODES D'OBJET
+    function envoyerRequeteSql()
+    {
+
+    }
+}
+
+$model = new Model;
+$model->envoyerRequeteSql();
+
+// ON PASSE PAR LA CLASSE POUR APPELER LA METHODE static
+// ET ON UTILISE :: 
+// https://www.php.net/manual/fr/language.oop5.paamayim-nekudotayim.php
+Model::connexionMysql();
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
