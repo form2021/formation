@@ -51,7 +51,7 @@ symfony
 ```php
 <?php
 
-// ETAPE 1 : créer une fonction
+// ETAPE 1 : déclarer/créer une fonction
 function afficherTexte ()
 {
     // LE DEV RANGE SON CODE DANS DES FONCTIONS
@@ -97,10 +97,68 @@ afficherTexte();
 
     PAUSE ET REPRISE A 11H20...
 
-    
+
 ## les classes en POO
 
+    dans la POO, on commence par créer des classes...
+    => une classe est une "boite" pour ranger nos fonctions...
 
+    en anglais "class" veut dire "groupe"
+
+```php
+<?php
+
+// ETAPE 1: DECLARATION DE LA CLASSE
+// => LE CODE EST EN ATTENTE D'ETRE EXECUTE
+class MaClasse
+{
+    // PROPRIETES OU ATTRIBUTS => VARIABLES RANGEES DANS UNE CLASSE
+    // on va pouvoir ranger des variables dans la classe
+    static $titre = "le titre du site";
+
+    // METHODES => UNE FONCTION RANGEE DANS UNE CLASSE
+    // on va ranger nos fonctions
+    function afficherTitre ()
+    {
+        // le dev écrit son code ici...
+    }    
+
+    function afficherContenu ()
+    {
+        // le dev écrit son code ici...
+    }
+
+}
+
+// ETAPE 2: APPELER LA METHODE
+// => ON DOIT CREER UN OBJET ET ENSUITE ON PEUT UTILISER L'OBJET POUR APPELER LA METHODE
+$objet = new MaClasse;      // new EST UN OPERATEUR D'INSTANCIATION => new CREE UN OBJET A PARTIR DE LA CLASSE
+$objet->afficherTitre();    // -> ON PASSE PAR L'OBJET POUR APPELER LA METHODE
+
+// UN OBJET EST UNE VALEUR CREEE A PARTIR D'UNE CLASSE
+// => LA POO EST PLUS LOURD A ECRIRE POUR LE DEV QUE LA PROGRAMMATION FONCTIONNELLE
+
+```
+
+## organisation du code en POO avec PHP
+
+    EN PHP, ON VA RANGER CHAQUE CLASSE DANS UN FICHIER DIFFERENT
+    EN RESUME: UNE CLASSE => UN FICHIER .php
+
+    EXEMPLE: SI ON A UNE CLASSE MaClasse ON VA RANGER SON CODE DANS UN FICHIER MaClasse.php
+
+    => ON VA PROFITER D'UN MECANISME AUTOMATIQUE DE PHP 
+    => CHARGEMENT AUTOMATIQUE DE CLASSE
+
+    => ON VA CREER UNE FONCTION DE CALLBACK QUI VA FAIRE require
+    => ET UNE FOIS QU'ON A INSTALLE LE MECANISME, PHP VA LE DECLENCER TOUT SEUL
+    => COOL POUR LE DEV ;-p
+
+    => DOUBLE EFFET KISSCOOL
+    => PLUS FACILE POUR LE DEV
+    => PLUS EFFICACE CAR PHP NE CHARGERA LE CODE QUE SI IL EN A BESOIN
+
+    
 
 
 
