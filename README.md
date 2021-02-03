@@ -268,10 +268,67 @@ Model::connexionMysql();
 
     PAUSE ET REPRISE A 15H50...
 
+    * .htaccess de WORDPRESS (MAIS MODIF DE DOSSIER POUR NOUS...)
+
+```htaccess
+# https://wordpress.org/support/article/htaccess/
+# BEGIN WordPress
+
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+## SUR UN VRAI SITE
+## https://monsite.fr/
+## RewriteBase /
+
+## DANS MON CAS
+## http://localhost:8888/formation/blog-poo/
+RewriteBase /formation/blog-poo/
+
+RewriteRule ^index\.php$ - [L]
+
+## SI L'URL DEMANDEE PAR LE NAVIGATEUR NE CORRESPOND 
+## NI A UN FICHIER NI A UN DOSSIER SUR LE SERVEUR
+## ALORS C'EST index.php QUI VA GERER LA REPONSE A RENVOYER AU NAVIGATEUR
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . ./index.php [L]
+
+# END WordPress
+```
+
+    * .htaccess de Symfony (simplifié, rien à changer...)
+
+```htaccess
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_URI}::$0 ^(/.+)/(.*)::\2$
+    RewriteRule .* - [E=BASE:%1]
+
+    RewriteCond %{HTTP:Authorization} .+
+    RewriteRule ^ - [E=HTTP_AUTHORIZATION:%0]
+
+    RewriteCond %{ENV:REDIRECT_STATUS} =""
+    RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ %{ENV:BASE}/index.php [L]
+</IfModule>
+
+```
 
 
 
+## BASE DE SITE
 
+    3 PAGES
+    * accueil       => URL      index.php
+    * blog                      blog.php
+    * contact                   contact.php
+
+    
 
 
 
