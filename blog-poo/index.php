@@ -19,7 +19,7 @@ class index
     {
         spl_autoload_register("index::chargerCodeClasse");
         $uri = $_SERVER["REQUEST_URI"];
-        extract(parse_url($uri));  // extract CREE DES VARIABLES AUTOMATIQUEMENT A PARTIR DES CLES
+        extract(parse_url($uri));   // extract CREE DES VARIABLES AUTOMATIQUEMENT A PARTIR DES CLES
         if (substr($path, -1, 1) == "/") {
             $path .= "index.php";   // on complète avec index.php
         }
