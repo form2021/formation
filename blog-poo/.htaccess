@@ -1,0 +1,24 @@
+# https://wordpress.org/support/article/htaccess/
+# BEGIN WordPress
+
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+## SUR UN VRAI SITE
+## https://monsite.fr/
+## RewriteBase /
+
+## DANS MON CAS
+## http://localhost:8888/formation/blog-poo/
+RewriteBase /formation/blog-poo/
+
+RewriteRule ^index\.php$ - [L]
+
+## SI L'URL DEMANDEE PAR LE NAVIGATEUR NE CORRESPOND 
+## NI A UN FICHIER NI A UN DOSSIER SUR LE SERVEUR
+## ALORS C'EST index.php QUI VA GERER LA REPONSE A RENVOYER AU NAVIGATEUR
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . ./index.php [L]
+
+# END WordPress
