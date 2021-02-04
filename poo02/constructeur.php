@@ -45,6 +45,14 @@ class User
         // AJOUTER LE CODE NECESSAIRE
     }
 
+    // PERMET DE CONVERTIR AUTOMATIQUEMENT UN OBJET EN TEXTE
+    function __toString ()
+    {
+        $texte = "<article><h3>$this->nom</h3><p>$this->email</p></article>";
+
+        return $texte;
+    }
+
     // METHODE D'OBJET
     function afficherInfos ()
     {
@@ -57,10 +65,30 @@ $auteur = new User("jean", "jean@mail.me");         // PHP APPELLE AUTOMATIQUEME
 
 $visiteur = new User("julie", "julie@mail.me");     // PHP APPELLE AUTOMATIQUEMENT $auteur->__construct("julie", "julie@mail.me")
 
-$auteur->afficherInfos();
+// $auteur->afficherInfos();
 
-$visiteur->afficherInfos();
+// $visiteur->afficherInfos();
 
+echo 
+<<<html
+
+    <header>
+        <strong>exemple poo</strong>
+    </header>
+    $auteur
+    $visiteur
+    <footer>
+        <p>tous droits réservés</p>
+    </footer>
+
+html;
+
+
+
+
+
+// SI PAS DE METHODE MAGIQUE __toString
+// Fatal error: Uncaught Error: Object of class User could not be converted to string
 
 // PHP FAIT LE MENAGE A LA FIN DU PROGRAMME
 // PHP DETRUIT LES VARIABLES CREEES $auteur ET $visiteur
