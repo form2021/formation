@@ -5,7 +5,7 @@ class Model
     // PROPRIETE
     static $db = null;
 
-    // METHODES
+    // METHODES DE CLASSE (static)
     static function connexion ()
     {
         // connexion
@@ -61,8 +61,8 @@ class Model
         // On écrit la requête
         $sql    = "SELECT * FROM articles WHERE $colonne = :$colonne";
         $query  = Model::$db->prepare($sql);
-        $query->bindValue($colonne, $valeurCherchee);
-        $query->execute();
+        // $query->bindValue($colonne, $valeurCherchee);
+        $query->execute([ $colonne => $valeurCherchee ]);
 
         return $query;      // la méthode ne transmet pas la variable sinon
     }

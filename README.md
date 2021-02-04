@@ -294,6 +294,9 @@ $visiteur->afficherInfos();
             priority    INT
 
 
+    PAUSE ET REPRISE A 16H10...
+    
+
 
 
 
