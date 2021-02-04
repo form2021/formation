@@ -263,7 +263,21 @@ $visiteur->afficherInfos();
     * TELECHARGER ET INSTALLER
     https://git-scm.com/
 
+    * DANS VSCODE ET TERMINAL (DES FOIS IL FAUT REDEMARRER VSCODE OU L'ORDI AVANT...)
+    git --version
 
+
+    * ET ENSUITE POUR CLONER UN REPO
+    OUVRIR LE TERMINAL DANS LE DOSSIER www
+    ET ENTRER LA LIGNE DE COMMANDE
+    
+    git clone https://github.com/form2021/formation.git
+
+    => DOIT COPIER LE REPO DANS UN DOSSIER www/formation
+
+## PROJET BLOG POO
+
+    ON VA AJOUTER UNE DATABASE  blog-poo
 
 
 
