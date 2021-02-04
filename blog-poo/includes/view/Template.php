@@ -10,6 +10,20 @@ class Template
         Template::footer();
     }
 
+    static function article ($article)
+    {
+        Template::header();
+?>
+        <article>
+            <h3><a href="./<?= $article["slug"] ?>.php"><?php echo $article["title"] ?></a></h3>
+            <p>Article écrit le <?= date("d/m/Y à H:i:s", strtotime($article["created_at"])) ?> dans <?= $article["category"] ?></p>
+            <div><?= $article["content"] ?></div>
+        </article>
+<?php
+        Template::footer();
+
+    }
+
     static function blog ()
     {
         Template::header();
@@ -23,7 +37,7 @@ class Template
         foreach($articles as $article):
 ?>
         <article>
-            <h3><a href="article.php?id=<?= $article["id"] ?>"><?php echo $article["title"] ?></a></h3>
+            <h3><a href="./<?= $article["slug"] ?>.php"><?php echo $article["title"] ?></a></h3>
             <p>Article écrit le <?= date("d/m/Y à H:i:s", strtotime($article["created_at"])) ?> dans <?= $article["category"] ?></p>
             <div><?= $article["content"] ?></div>
         </article>

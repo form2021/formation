@@ -26,11 +26,24 @@ class index
         extract(pathinfo($path));
         $codeTemplate = "Template::$filename";
         if (is_callable($codeTemplate)) {
+            // pour les pages
             $codeTemplate();            // ON EXECUTE DU CODE DYNAMIQUEMENT
         }
         else {
-            header("HTTP/1.0 404 Not Found");
-            Template::error404();
+            // On va chercher dans la table SQL articles 
+            // si on a une ligne qui correspond à $filename sur la colonne slug
+            // SELECT * FROM articles WHERE slug = :slug
+            $query      = Model::lireArticle("slug", $filename);
+            $article    = $query->fetch(); 
+            if ($article) {     // si on a une ligne
+                // afficher l'article
+                Template::article($article);
+            }
+            else {
+                // erreur 404 sinon
+                header("HTTP/1.0 404 Not Found");
+                Template::error404();
+            }
         }
     }
 
