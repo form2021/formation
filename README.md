@@ -304,6 +304,11 @@ $visiteur->afficherInfos();
     * SUR LA PAGE BLOG, ON NE VA PAS AFFICHER TOUS LES ARTICLES
         MAIS ON VA FILTRER POUR AFFICHER SEULEMENT LES ARTICLES DANS LA category = 'news'
 
+## migration dailymotion vers symfony
+
+    https://www.yumpu.com/fr/document/read/35951612/symfony-et-dailymotion-une-migration-racussie
+
+
     
 
 
