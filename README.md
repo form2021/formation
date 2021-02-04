@@ -276,11 +276,21 @@ $visiteur->afficherInfos();
     => DOIT COPIER LE REPO DANS UN DOSSIER www/formation
 
     ET ENSUITE CLIQUER SUR LE BOUTON BLEU RAFRAICHIR EN BAS DE PAGE...
-    
+
+
+    PAUSE DEJEUNER ET REPRISE A 14H05...
+
 ## PROJET BLOG POO
 
-    ON VA AJOUTER UNE DATABASE  blog-poo
-
+    ON VA AJOUTER UNE DATABASE  blog-poo    (charset utf8mb4_general_ci)
+        ET ON VA CREER UNE TABLE SQL    articles
+            id          INT                 INDEX=PRIMARY   A_I
+            title       VARCHAR(255)
+            content     TEXT
+            created_at   DATETIME
+            picture     VARCHAR(255)
+            category    VARCHAR(255)
+            priority    INT
 
 
 
