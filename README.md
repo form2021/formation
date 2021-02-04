@@ -258,21 +258,10 @@ $visiteur->afficherInfos();
         => TEMPS D'ADAPTATION IMPORTANT QUAND ON DECOUVRE UN PROJET POO
         => POUR COMPENSER CETTE COMPLEXITE, ON RESPECTE LE MVC QUI DEFINIT L'ORGANISATION DU CODE
 
+## GIT SCM
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    * TELECHARGER ET INSTALLER
+    https://git-scm.com/
 
 
 
