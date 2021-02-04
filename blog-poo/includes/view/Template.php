@@ -13,13 +13,20 @@ class Template
     static function article ($article)
     {
         Template::header();
-?>
-        <article>
-            <h3><a href="./<?= $article["slug"] ?>.php"><?php echo $article["title"] ?></a></h3>
-            <p>Article écrit le <?= date("d/m/Y à H:i:s", strtotime($article["created_at"])) ?> dans <?= $article["category"] ?></p>
-            <div><?= $article["content"] ?></div>
-        </article>
-<?php
+        // astuce
+        extract($article);  // => crée des variables à partir des clés/colonnes
+                            // $id, $title, $slug, etc...
+        $dateAffichee = date("d/m/Y à H:i:s", strtotime($created_at));
+        
+        echo
+        <<<x
+            <article>
+                <h3><a href="./$slug.php">$title</a></h3>
+                <p>Article écrit le $dateAffichee dans $category</p>
+                <div>$content</div>
+            </article>
+        x;
+
         Template::footer();
 
     }

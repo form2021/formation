@@ -288,14 +288,35 @@ $visiteur->afficherInfos();
             title       VARCHAR(255)
             slug        VARCHAR(255)
             content     TEXT
-            created_at   DATETIME
+            created_at  DATETIME
             picture     VARCHAR(255)
             category    VARCHAR(255)
             priority    INT
 
 
     PAUSE ET REPRISE A 16H10...
+
+## EXOS
+
+    * UTILISER UN ARTICLE COMME UNE PAGE (COMME WORDPRESS...)
+        AJOUTER UNE PAGE credits EN AJOUTANT UNE LIGNE DANS LA TABLE SQL articles
+
+    * SUR LA PAGE BLOG, ON NE VA PAS AFFICHER TOUS LES ARTICLES
+        MAIS ON VA FILTRER POUR AFFICHER SEULEMENT LES ARTICLES DANS LA category = 'news'
+
     
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -27,7 +27,7 @@ class Model
             Model::$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         
         }
-        catch (PDOException $e){
+        catch (PDOException $e) {
             // PDOEException $e -> on attrape l'erreur provoquée par le new PDO en cas d'échec
             // On affiche le
             die($e->getMessage());
