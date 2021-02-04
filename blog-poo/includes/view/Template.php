@@ -14,6 +14,23 @@ class Template
     {
         Template::header();
         echo "<h1>on est sur la page blog</h1>";
+        // ICI ON VA AFFICHER LES ARTICLES
+        // en poo, on utilise une méthode au lieu de faire require_once
+        $query = Model::lireArticles();
+
+        // On récupère les données
+        $articles = $query->fetchAll(); // Après un fetchAll on a TOUJOURS un foreach
+        foreach($articles as $article):
+?>
+        <article>
+            <h3><a href="article.php?id=<?= $article["id"] ?>"><?php echo $article["title"] ?></a></h3>
+            <p>Article écrit le <?= date("d/m/Y à H:i:s", strtotime($article["created_at"])) ?> dans <?= $article["category"] ?></p>
+            <div><?= $article["content"] ?></div>
+        </article>
+<?php
+        endforeach;
+            
+            
         Template::footer();
     }
 

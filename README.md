@@ -286,6 +286,7 @@ $visiteur->afficherInfos();
         ET ON VA CREER UNE TABLE SQL    articles
             id          INT                 INDEX=PRIMARY   A_I
             title       VARCHAR(255)
+            slug        VARCHAR(255)
             content     TEXT
             created_at   DATETIME
             picture     VARCHAR(255)
