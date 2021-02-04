@@ -270,14 +270,17 @@ $visiteur->afficherInfos();
     * ET ENSUITE POUR CLONER UN REPO
     OUVRIR LE TERMINAL DANS LE DOSSIER www
     ET ENTRER LA LIGNE DE COMMANDE
-    
+
     git clone https://github.com/form2021/formation.git
 
     => DOIT COPIER LE REPO DANS UN DOSSIER www/formation
 
+    ET ENSUITE CLIQUER SUR LE BOUTON BLEU RAFRAICHIR EN BAS DE PAGE...
+    
 ## PROJET BLOG POO
 
     ON VA AJOUTER UNE DATABASE  blog-poo
+
 
 
 
