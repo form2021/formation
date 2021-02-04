@@ -2,6 +2,7 @@
 
 class Template
 {
+    // chaque page est une méthode de classe Template
     static function index ()
     {
         Template::header();
