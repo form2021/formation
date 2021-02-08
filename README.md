@@ -248,13 +248,134 @@ $page->afficherProfil();
 
     PAUSE ET REPRISE 11H25...
 
-    
+
+## HERITAGE ENTRE CLASSES
+
+    https://www.php.net/manual/fr/language.oop5.inheritance.php
+
+    TECHNIQUE FONDAMENTALE DANS LA POO
+    (ATTENTION: ON AURA AUSSI UNE AUTRE TECHNIQUE PLUS MODERNE... traits...)
+
+    PROBLEMATIQUE:
+    D.R.Y.
+    Don't
+    Repeat
+    Yourself
+
+    => ESSAYER DE CENTRALISER LE CODE POUR NE PAS LE REPETER DANS DIFFERENTS FICHIERS
+
+```php
+<?php
+
+
+// DEV COMMUN
+class Annonce                       // CLASSE PARENTE
+{
+    // propriétés
+    public $titre       = "";
+    public $description = "";
+    public $prix        = 0;
+
+}
+
+// LES CLASSES ENFANTS HERITENT DES PROPRIETES ET DES METHODES DE LA CLASSE PARENT
+
+// DEV 1
+class AnnonceImmo       // CLASSE ENFANT
+    extends Annonce     // AVEC extends ON CREE UN LIEN D'HERITAGE ENTRE 2 CLASSES
+{
+    // propriétés
+    public $surface     = 0;
+    public $nbPiece     = 0;
+
+    // methodes
+}
+
+// DEV 2
+class AnnonceVoiture    // CLASSE ENFANT
+    extends Annonce     // AVEC extends ON CREE UN LIEN D'HERITAGE ENTRE 2 CLASSES
+{
+    // propriétés
+    public $marque          = "";
+    public $moteur          = "";        // essence / diesel / etc...
+    public $kilometrage     = 0;
+
+    // methodes
+
+}
+
+
+$immo = new AnnonceImmo;
+$immo->titre    = "3 pièces lumineux";  // ok grace a heritage avec Annonce
+$immo->surface  = 50;
 
 
 
+```
 
 
+    RESUME SUR VISIBILITE
+    * public        LE PLUS FACILE ACCES PARTOUT
+    * protected     ACCES SEULEMENT DANS LA CLASSE OU DANS LES CLASSES ENFANTS
+    * private       ACCES SEULEMENT DANS LA CLASSE (MAIS PAS DANS LES CLASSES ENFANTS)
 
+    ET RECOMMENDATION DE LA MAITRISE D'OUVRAGE
+    * LES PROPRIETES SONT SOIT protected OU private MAIS JAMAIS public
+        => IL FAUT CREER DES GETTERS ET SETTERS en public...
+
+## AIE... LES PROBLEMES AVEC L'HERITAGE...
+
+    AVEC L'HERITAGE ON PEUT COMBINER LES CODES DE 2 CLASSES...
+    MAIS ON PEUT CREER DES SCENARIOS BIZARRES...
+
+
+### SURCHARGE DE METHODE (OVERRIDE EN PHP...)
+
+    QUE SE PASSE-T-IL SI ON CREE 2 METHODES AVEC LE MEME NOM ?
+    UNE DANS LA CLASSE ENFANT ET UNE AUTRE DANS LA CLASSE PARENT ?
+
+
+```php
+<?php
+
+class Annonce       // CLASSE PARENT
+{
+    // méthode
+    function afficher ()
+    {
+        echo "On est dans la méthode du parent...";
+    }
+}
+
+class AnnonceVoiture    // CLASSE ENFANT
+    extends Annonce     // HERITAGE AVEC LA CLASSE PARENT Annonce
+{
+    // méthode
+    function afficher ()
+    {
+        echo "On est dans la méthode de l'enfant...";
+
+        // on peut executer le code dans la classe parent
+        // bricolage pas cohérent car travailler n'est pas une méthode static
+        // plus cohérent d'écrire parent->travailler();
+        parent::afficher();
+
+    }
+}
+
+$annonceVoiture = new AnnonceVoiture;
+
+// ...
+
+
+$annonceVoiture->afficher();    // ok car héritage
+// COMME $annonceVoiture EST UN OBJET DE LA CLASSE AnnonceVoiture
+// ALORS PHP UTILISE EN PRIORITE LA METHODE DE LA CLASSE ENFANT
+
+
+```
+
+    PAUSE DEJEUNER ET REPRISE A 14H05...
 
 
 
