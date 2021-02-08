@@ -138,7 +138,7 @@ class Template
             </section>
         x;
 
-        // séparation MVC: on sépare le code de traitement dans une partir controller
+        // séparation MVC: on sépare le code de traitement dans une partie controller
         Controller::traiterFormulaire();
 
         Template::footer();
