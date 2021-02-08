@@ -44,7 +44,7 @@ class Model
         // Ici on affichera les articles
         // On récupère les données dans la base
         // On écrit la requête
-        $sql    = "SELECT * FROM `articles`";
+        $sql    = "SELECT * FROM `articles` WHERE category = 'news'";
         $query  = Model::$db->query($sql);
 
         return $query;      // la méthode ne transmet pas la variable sinon

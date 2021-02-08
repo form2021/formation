@@ -42,13 +42,19 @@ class Template
         // On récupère les données
         $articles = $query->fetchAll(); // Après un fetchAll on a TOUJOURS un foreach
         foreach($articles as $article):
-?>
-        <article>
-            <h3><a href="./<?= $article["slug"] ?>.php"><?php echo $article["title"] ?></a></h3>
-            <p>Article écrit le <?= date("d/m/Y à H:i:s", strtotime($article["created_at"])) ?> dans <?= $article["category"] ?></p>
-            <div><?= $article["content"] ?></div>
-        </article>
-<?php
+            // astuce
+            extract($article);  // => crée des variables à partir des clés/colonnes
+                                // $id, $title, $slug, etc...
+            $dateAffichee = date("d/m/Y à H:i:s", strtotime($created_at));
+            
+            echo
+            <<<x
+                <article>
+                    <h3><a href="./$slug.php">$title</a></h3>
+                    <p>Article écrit le $dateAffichee dans $category</p>
+                    <div>$content</div>
+                </article>
+            x;
         endforeach;
             
             
@@ -106,6 +112,10 @@ class Template
 ?>
     </main>
     <footer>
+        <nav>
+            <a href="credits.php">crédits</a>
+            <a href="mentions-legales.php">mentions légales</a>
+        </nav>
         <p>tous droits réservés</p>
     </footer>
 </body>
