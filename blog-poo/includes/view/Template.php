@@ -1,5 +1,6 @@
 <?php
 
+//  EMBAUCHER UN DEV QUI CONNAIT HTML, MAIS PAS BESOIN DE SQL
 class Template
 {
     // chaque page est une méthode de classe Template

@@ -1,5 +1,6 @@
 <?php
 
+// EMBAUCHER UN DEV QUI CONNAIT SQL, MAIS PAS DE CONNAITRE HTML
 class Model
 {
     // PROPRIETE
@@ -68,5 +69,33 @@ class Model
     }
 
 
+    // methode pour inserer une ligne dans la table SQL articles
+    static function insererArticle ($tableauAsso)
+    {
+        // SQL
+        Model::connexion();
+        // On écrit la requête
+        $sql = 
+        <<<sql
+        INSERT INTO `articles`
+        (`title`, `content`, `picture`, `slug`, `category`, `priority`, `created_at`) 
+        VALUES 
+        (:title, :content, :picture, :slug, :category, :priority, :created_at)
+        sql;
+
+        // On prépare la requête
+        $query = Model::$db->prepare($sql);
+
+        // On injecte les paramètres
+        // $query->bindValue(":titre", $titre, PDO::PARAM_STR);
+        // $query->bindValue(":contenu", $contenu, PDO::PARAM_STR);
+
+        // On exécute (TODO: AJOUTER SECURITE...)
+        $query->execute($tableauAsso);
+
+        // On récupère l'id du dernier insert dans la base
+        $idArticle = Model::$db->lastInsertId();
+
+    }
 
 }
