@@ -4,9 +4,9 @@
 
 ## liveshare
 
-    lundi 08/02
-    
-https://prod.liveshare.vsengsaas.visualstudio.com/join?61840F70CF3D13E3F4BF832BA4503EF13687
+    lundi 08/02 (après-midi)
+
+https://prod.liveshare.vsengsaas.visualstudio.com/join?358FE179CE442FEC21614909E0845C6712A7
 
 ## questions ??
 
@@ -376,6 +376,14 @@ $annonceVoiture->afficher();    // ok car héritage
 ```
 
     PAUSE DEJEUNER ET REPRISE A 14H05...
+
+## EXOS
+
+    * UTILISER UN ARTICLE COMME UNE PAGE (COMME WORDPRESS...)
+        AJOUTER UNE PAGE credits EN AJOUTANT UNE LIGNE DANS LA TABLE SQL articles
+
+    * SUR LA PAGE BLOG, ON NE VA PAS AFFICHER TOUS LES ARTICLES
+        MAIS ON VA FILTRER POUR AFFICHER SEULEMENT LES ARTICLES DANS LA category = 'news'
 
 
 

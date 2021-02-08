@@ -1,24 +1,16 @@
-# https://wordpress.org/support/article/htaccess/
-# BEGIN WordPress
+# Symfony (mais Simplifié...)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
 
-RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    RewriteCond %{REQUEST_URI}::$0 ^(/.+)/(.*)::\2$
+    RewriteRule .* - [E=BASE:%1]
 
-## SUR UN VRAI SITE
-## https://monsite.fr/
-## RewriteBase /
+    RewriteCond %{HTTP:Authorization} .+
+    RewriteRule ^ - [E=HTTP_AUTHORIZATION:%0]
 
-## DANS MON CAS
-## http://localhost:8888/formation/blog-poo/
-RewriteBase /formation/blog-poo/
+    RewriteCond %{ENV:REDIRECT_STATUS} =""
+    RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
 
-RewriteRule ^index\.php$ - [L]
-
-## SI L'URL DEMANDEE PAR LE NAVIGATEUR NE CORRESPOND 
-## NI A UN FICHIER NI A UN DOSSIER SUR LE SERVEUR
-## ALORS C'EST index.php QUI VA GERER LA REPONSE A RENVOYER AU NAVIGATEUR
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . ./index.php [L]
-
-# END WordPress
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ %{ENV:BASE}/index.php [L]
+</IfModule>
