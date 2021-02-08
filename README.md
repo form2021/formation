@@ -385,6 +385,8 @@ $annonceVoiture->afficher();    // ok car héritage
     * SUR LA PAGE BLOG, ON NE VA PAS AFFICHER TOUS LES ARTICLES
         MAIS ON VA FILTRER POUR AFFICHER SEULEMENT LES ARTICLES DANS LA category = 'news'
 
+    ON EST EN TRAIN DE CREER UN CMS...
+    
 
 
 
