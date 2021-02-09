@@ -329,10 +329,172 @@ $objet->faireTravail();
 
     PAUSE ET REPRISE A 11H25...
 
+## SYNTHESE POO
+
+    * principe général: on range notre code
+    * boite 1: les classes
+    * en php: on va ranger une classe MaClasse dans son fichier MaClasse.php
+    * explication: cela permet le chargement automatique de classe par PHP
+
+    * dans une classe: on faire créer des méthodes et des propriétés
+    * est-ce que je fais du static ou pas ?
+
+            si on fait des methodes static  
+            => pour appeler la methode, on passe par la classe
+            MaClasse::faireTravail()
+
+            si on fait des methodes d'objet
+            => pour appeler la methode, on doit d'abord créer un objet
+            $objet = new MaClasse;
+            $objet->faireTravail2();
+
+            avantage des méthodes d'objet, c'est qu'on peut utiliser $this
+            $this est une variable spéciale qui permet d'accéder aux propriétés d'objet
+        
+    * propriétés d'objet
+        on les définit dans la classe
+        mais quand on fait une instanciation avec new
+        alors PHP crée pour chaque objet son jeu de propriétés
+
+```php
+<?php
+
+class MaClasse
+{
+    // ranger votre code ici
+    // propriété d'objet
+    public $nom = "";
+
+    // méthode = fonction rangée dans une classe
+    static function faireTravail ()
+    {
+        // ecrire notre code ici...   
+    }
+
+    function faireTravail2 ()
+    {
+        // ecrire notre code ici...   
+    }
+
+}
+
+$objet = new MaClasse;      // $objet->nom est ""
+$objet->nom = "nom1";       // $objet->nom est "nom1"  on a une première variable nom qui est dans $objet   
+
+$objet2 = new MaClasse;
+$objet2->nom = "nom2";      // on a une 2è variable nom qui est dans $objet2
+
+echo $objet->nom;           // "nom1"
+
+
+class MaClasse2
+{
+    // methodes
+    function afficherContenu ()
+    {
+        // ...
+    }
+}
+
+```
+
+    * techniques pour travailler en équipe
+            chaque dev travaille sur ses fichiers
+            => comment interagir entre les différentes classes ?
+    * héritage entre classes
+    * classes abstraites
+    * interfaces
+    * traits
+
+    attention: tout pourrait se combiner...
+
+
+```php
+<?php
+
+// DEV 1
+class MonCodeParent
+{
+    // methodes
+    function faireBoulot1 ()
+    {
+        // ...
+    }
+}
+
+// DEV 2
+// IL VEUT UTILISER LE CODE DE DEV 1
+class MonCodeEnfant
+    extends MonCodeParent
+{
+    // methodes
+    function faireBoulot2 ()
+    {
+        // ici on peut faire à faireBoulot1
+        $this->faireBoulot1();
+    }
+}
+
+
+```
+
+    * code horrible
+```php
+<?php
+
+// fichier CodeParent.php
+class CodeParent
+{
+
+}
+
+// fichier MonContrat.php
+interface MonContrat
+{
+
+}
+
+// fichier MonTrait1.php
+trait MonTrait1
+{
+
+}
+
+// fichier MonTrait2.php
+trait MonTrait2
+{
+
+}
+
+class CodeEnfant
+    extends CodeParent
+    implements MonContrat
+{
+    use MonTrait1, MonTrait2;
+}
+
+$objet = new CodeEnfant;
+$objet->faireTravail();     // D'OU VIENT LA METHODE faireTravail ???
+
+
+```
 
 
 
+    FRAMEWORK
+    FRAME   CADRE       => CONTRAINTE, PAS TROP DE CHOIX...
+    WORK    TRAVAIL
 
+    SYMFONY EST UN FRAMEWORK
+    => SYMFONY "IMPOSE" SA MANIERE DE TRAVAILLER...
+
+    LARAVEL ET VUE PEUVENT TRES BIEN TRAVAILLER ENSEMBLE...
+
+## NAMESPACE
+
+    * BOITES POUR RANGER LES CLASSES...
+
+    https://www.php.net/manual/fr/language.namespaces.definitionmultiple.php
 
 
 
