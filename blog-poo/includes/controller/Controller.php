@@ -20,20 +20,32 @@ class Controller
             ) {
                 // TODO: AJOUTER FILTRES SECURITE
                 $tableauAsso = [
-                    "title"         => $_POST["title"],
-                    "content"       => $_POST["content"],
-                    "picture"       => $_POST["picture"],
-                    "slug"          => $_POST["slug"],
-                    "category"      => $_POST["category"],
-                    "priority"      => $_POST["priority"],
+                    "title"         => Controller::filtrerTexte("title"),
+                    "content"       => Controller::filtrerTexte("content"),
+                    "picture"       => Controller::filtrerTexte("picture"),
+                    "slug"          => Controller::filtrerTexte("slug"),
+                    "category"      => Controller::filtrerTexte("category"),
+                    "priority"      => Controller::filtrerTexte("priority"),
                     "created_at"    => date("Y-m-d H:i:s"),     // remplissage automatique avec la date actuelle
                 ];
 
-                // on appelle la methode insererArticle
+                // on appelle la methode insererArticle pour inserer dans la database SQL
                 Model::insererArticle($tableauAsso);
+
+                // Model::insererDanger($tableauAsso);
             }
             // DEBUG
             echo "<h3>ICI ON VA TRAITER LE FORMULAIRE</h3>";
         }
+    }
+
+    static function filtrerTexte ($cle)
+    {
+        $infoExterieur = $_POST["$cle"] ?? "";              // ?? => isset
+        // on va filtrer cette info
+        $infoExterieur = strip_tags($infoExterieur);        // enleve les balises HTML et PHP
+        $infoExterieur = trim($infoExterieur);              // enleve les espaces en trop au debut et a la fin
+
+        return $infoExterieur;
     }
 }

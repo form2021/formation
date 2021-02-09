@@ -537,9 +537,20 @@ $objet->faireTravail();     // D'OU VIENT LA METHODE faireTravail ???
     => UN UTILISATEUR NON DEV PEUT GERER LE CONTENU DE SON SITE SANS DEMANDER A UN DEV...
     => WordPress...
 
+
+
+    PAUSE ET REPRISE A 15H55
+
+
+
+
+
+
+
+
+
+
     
-
-
 
 
 

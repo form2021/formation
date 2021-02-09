@@ -20,19 +20,30 @@ header, footer {
     text-align: center;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     width:100%;
     text-align: center;
+    padding:1rem;
 }
 
-section {
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    padding:1rem;
+}
+
+body.index section {
     display: flex;
     flex-wrap: wrap;
 }
 
-article {
+body.index article {
     width: calc(100% / 3);
     padding: 1rem;
+}
+
+form {
+    padding:1rem;
 }
 
 /* CSS POUR UNE PAGE SPECIFIQUE */

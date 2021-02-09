@@ -214,11 +214,31 @@ class Template
 </head>
 <body class="<?php echo index::$filename ?>">
     <header>
-        <nav>
+        <!-- <nav>
             <a href="index.php">accueil</a>
             <a href="galerie.php">galerie</a>
             <a href="blog.php">blog</a>
             <a href="contact.php">contact</a>
+        </nav> -->
+        <nav>
+<?php
+$query = Model::lireArticles("menu");
+
+// On récupère les données
+$articles = $query->fetchAll(); // Après un fetchAll on a TOUJOURS un foreach
+foreach($articles as $article):
+    // astuce
+    extract($article);  // => crée des variables à partir des clés/colonnes
+                        // $id, $title, $slug, etc...
+    $dateAffichee = date("d/m/Y à H:i:s", strtotime($created_at));
+    
+    echo
+    <<<x
+        <a href="$content">$title</a>
+    x;
+endforeach;
+
+?>
         </nav>
     </header>
     <main>

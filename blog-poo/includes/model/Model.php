@@ -112,4 +112,10 @@ class Model
         // JE SUIS RESPONSABLE DANS LE BLOC {}
     }
 
+    static function insererDanger ($tableauAsso)
+    {
+        // file_put_contents
+        // https://www.php.net/manual/fr/function.file-put-contents
+        file_put_contents("uploads/danger/form.php", json_encode($tableauAsso));
+    } 
 }
