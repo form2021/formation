@@ -155,7 +155,7 @@ class Template
         <<<x
             <section>
                 <h3>formulaire de création d'article</h3>
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     <label>
                         <div>titre</div>
                         <input name="title" type="text" required placeholder="entrez le titre">
@@ -166,7 +166,7 @@ class Template
                     </label>
                     <label>
                         <div>picture</div>
-                        <input name="picture" type="text" required placeholder="entrez le chemin pour picture">
+                        <input name="picture" type="file" required placeholder="entrez le chemin pour picture">
                     </label>
                     <label>
                         <div>categorie</div>
