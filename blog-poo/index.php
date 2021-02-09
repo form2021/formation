@@ -33,10 +33,10 @@ class index
             // On va chercher dans la table SQL articles 
             // si on a une ligne qui correspond à $filename sur la colonne slug
             // SELECT * FROM articles WHERE slug = :slug
-            $query      = Model::lireArticle("slug", $filename);
-            $article    = $query->fetch(); 
+            $query      = Model::lireArticle("slug", $filename);    // on envoie la requete SQL
+            $article    = $query->fetch(); // fetch ramene le resultat (la ligne SQL) dans le monde PHP
             if ($article) {     // si on a une ligne
-                // afficher l'article
+                // afficher l'article avec les infos recuperees par la requete
                 Template::article($article);
             }
             else {

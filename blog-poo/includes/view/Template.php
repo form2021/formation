@@ -78,7 +78,7 @@ class Template
         // en poo, on utilise une méthode au lieu de faire require_once
         // on va afficher seulement les articles de la catégorie "galerie"
         $query = Model::lireArticles("galerie");
-
+        
         // On récupère les données
         $articles = $query->fetchAll(); // Après un fetchAll on a TOUJOURS un foreach
         foreach($articles as $article):

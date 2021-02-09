@@ -2,6 +2,7 @@
 
 // EMBAUCHER UN DEV QUI CONNAIT SQL, MAIS PAS DE CONNAITRE HTML
 class Model
+    implements Contrat
 {
     // PROPRIETE
     static $db = null;
@@ -96,6 +97,13 @@ class Model
         // On récupère l'id du dernier insert dans la base
         $idArticle = Model::$db->lastInsertId();
 
+    }
+
+
+    function faireClauseBlaBla ()
+    {
+        // J'AI PAS FINI MAIS CA DEBLOQUE LA SITUATION
+        // JE SUIS RESPONSABLE DANS LE BLOC {}
     }
 
 }
