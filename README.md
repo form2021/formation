@@ -498,6 +498,31 @@ $objet->faireTravail();     // D'OU VIENT LA METHODE faireTravail ???
 
 
 
+## SITE POUR TESTS ET APPRENTISSAGE PROGRAMMATION
+
+    * POUR JS
+    https://codecombat.com/
+
+
+    * POUR TESTS RECRUTEMENT
+    https://www.codingame.com/start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
