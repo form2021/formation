@@ -503,10 +503,11 @@ $objet->faireTravail();     // D'OU VIENT LA METHODE faireTravail ???
     * POUR JS
     https://codecombat.com/
 
-
     * POUR TESTS RECRUTEMENT
     https://www.codingame.com/start
 
+    * CORRIGES CONCOURS MEILLEUR DEV OU BATTLEDEV, etc...
+    https://www.isograd.com/FR/solutionconcours.php
 
 
 
