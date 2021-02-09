@@ -510,6 +510,34 @@ $objet->faireTravail();     // D'OU VIENT LA METHODE faireTravail ???
     https://www.isograd.com/FR/solutionconcours.php
 
 
+    PAUSE DEJEUNER ET REPRISE 14H10...
+
+## ACTIVITES POUR CET APRES-MIDI
+
+    * continuer sur le projet blog-poo
+        (dont exos...)
+
+ ## EXOS POUR PRATIQUER
+
+    * AJOUTER SUR LA PAGE D'ACCUEIL PLUSIEURS SECTIONS
+        EXEMPLE: PAGE DE CV
+        AJOUTER UNE SECTION COMPETENCES OU ON AFFICHE LES ARTICLES DANS LA CATEGORIE "competences"
+        AJOUTER UNE SECTION PROJETS OU ON AFFICHE LES ARTICLES DANS LA CATEGORIE "projets"
+
+    * AJOUTER LE CODE PHP POUR RENDRE LE MENU PRINCIPAL DYNAMIQUE (DANS LE HEADER)
+        ON VEUT CONSTRUIRE UN MENU AVEC DES ARTICLES QUI SERONT DANS LA CATEGORIE "menu"
+
+    * AJOUTER DANS LE FORMULAIRE L'UPLOAD DE FICHIER...    
+   
+    Content
+    Management
+    System
+
+    Système de Gestion de Contenu
+    => UN UTILISATEUR NON DEV PEUT GERER LE CONTENU DE SON SITE SANS DEMANDER A UN DEV...
+    => WordPress...
+
+    
 
 
 

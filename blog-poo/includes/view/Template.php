@@ -7,7 +7,56 @@ class Template
     static function index ()
     {
         Template::header();
-        echo "<h1>on est sur la page index</h1>";
+
+        echo "<section>";
+        echo "<h1>mon CV</h1>";
+        // on va ajouter une section qui affiche les articles dans la catégorie compétences
+        // ICI ON VA AFFICHER LES ARTICLES
+        // en poo, on utilise une méthode au lieu de faire require_once
+        // on va afficher seulement les articles de la catégorie "galerie"
+        $query = Model::lireArticles("competences");
+        
+        // On récupère les données
+        $articles = $query->fetchAll(); // Après un fetchAll on a TOUJOURS un foreach
+        foreach($articles as $article):
+            // astuce
+            extract($article);  // => crée des variables à partir des clés/colonnes
+                                // $id, $title, $slug, etc...            
+            echo
+            <<<x
+                <article>
+                    <h3>$title</h3>
+                    <p>$content</p>
+                </article>
+            x;
+        endforeach;
+        echo "</section>";
+
+        echo "<section>";
+        echo "<h1>mes projets</h1>";
+        // on va ajouter une section qui affiche les articles dans la catégorie compétences
+        // ICI ON VA AFFICHER LES ARTICLES
+        // en poo, on utilise une méthode au lieu de faire require_once
+        // on va afficher seulement les articles de la catégorie "galerie"
+        $query = Model::lireArticles("projets");
+        
+        // On récupère les données
+        $articles = $query->fetchAll(); // Après un fetchAll on a TOUJOURS un foreach
+        foreach($articles as $article):
+            // astuce
+            extract($article);  // => crée des variables à partir des clés/colonnes
+                                // $id, $title, $slug, etc...            
+            echo
+            <<<x
+                <article>
+                    <img src="uploads/images/$picture" alt="$title"> 
+                    <h3>$title</h3>
+                    <p>$content</p>
+                </article>
+            x;
+        endforeach;
+        echo "</section>";
+
         Template::footer();
     }
 
@@ -163,7 +212,7 @@ class Template
 
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="<?php echo index::$filename ?>">
     <header>
         <nav>
             <a href="index.php">accueil</a>

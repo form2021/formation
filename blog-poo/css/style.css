@@ -19,3 +19,23 @@ img {
 header, footer {
     text-align: center;
 }
+
+h1 {
+    width:100%;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article {
+    width: calc(100% / 3);
+    padding: 1rem;
+}
+
+/* CSS POUR UNE PAGE SPECIFIQUE */
+body.index article {
+    background-color: #dddddd;
+}

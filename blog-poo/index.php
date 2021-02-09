@@ -5,6 +5,7 @@
 class index
 {
     // PROPRIETES
+    static $filename = "";
 
     // METHODES (conseil pour le nom: verbe)
 
@@ -25,6 +26,11 @@ class index
         }
         extract(pathinfo($path));
         $codeTemplate = "Template::$filename";
+
+        // je vais memoriser $filename dans une propriété statique
+        // pour pouvoir réutiliser plus tard
+        index::$filename = $filename;
+
         if (is_callable($codeTemplate)) {
             // pour les pages
             $codeTemplate();            // ON EXECUTE DU CODE DYNAMIQUEMENT
