@@ -333,7 +333,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?B7391B28D873700375CA86460
     ON PEUT ACTIVER GIT
     git init
     (ensuite faire des commit pour créer des sauvegardes...)
-    
+
     COMME ON A APACHE, IL FAUT AJOUTER LE FICHIER .htaccess
 
     composer require symfony/apache-pack
@@ -347,7 +347,15 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?B7391B28D873700375CA86460
 
     php bin/console make:controller
 
+## TEMPLATE AVEC TWIG
 
+    https://twig.symfony.com/
+
+    SYMFONY CONSIDERE QUE PHP N'EST PAS SUFFISANT POUR LE TEMPLATING
+    => SYMFONY AJOUTE LE LANGAGE TWIG POUR GERER LES TEMPLATES
+
+    SI ON VEUT FAIRE SIMPLE, ON PEUT CODER SON HTML DANS LE FICHIER twig
+    
 
 
 
