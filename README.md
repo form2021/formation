@@ -259,10 +259,31 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?B7391B28D873700375CA86460
 
     PAUSE DEJEUNER ET REPRISE A 14H15...
 
+## CREER SA PREMIERE PAGE AVEC SYMFONY
+
+    https://symfony.com/doc/current/page_creation.html
 
 
+    https://symfony.com/doc/current/page_creation.html#annotation-routes
 
 
+## CREER SON CONTROLLER AVEC LA CONSOLE
+
+    OUVRIR UN TERMINAL DANS LE DOSSIER symfony/
+
+    php bin/console make:controller
+
+    ET DONNER LE NOM DE LA CLASSE (SANS LE SUFFIXE Controller)
+
+    Choose a name for your controller class (e.g. GentleElephantController):
+    > First
+
+    created: src/Controller/FirstController.php
+    created: templates/first/index.html.twig
+
+    => ON OBTIENT 2 NOUVEAUX FICHIERS...
+
+    PAUSE ET REPRISE A 16H...
 
 
 
