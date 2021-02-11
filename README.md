@@ -173,3 +173,106 @@ DATABASE_URL="mysql://root:@localhost:3306/symfony?serverVersion=mariadb-10.4.17
 
     ET SI TOUT SE PASSE BIEN, ON PEUT VERIFIER AVEC PHPMYADMIN QUE LA DATABASE EST CREEE...
 
+    Created database `symfony` for connection named default
+
+
+    PAUSE ET REPRISE A 14H...
+
+
+## AJOUTER UNE TABLE SQL POUR ENREGISTRER LES INSCRIPTIONS A UNE NEWSLETTER
+
+    Table SQL newsletter
+        id                  INT             INDEX=PRIMARY   A_I
+        nom                 VARCHAR(255)
+        email               VARCHAR(255)
+        date_inscription    DATETIME
+
+
+    https://symfony.com/doc/current/doctrine.html#creating-an-entity-class
+
+    DANS SYMFONY, ON PASSE PAR UNE LIGNE DE COMMANDE QUI VA CREER UNE CLASSE PHP
+    ET ENSUITE, D'AUTRES LIGNES DE COMMANDES VONT CREER LA TABLE SQL...
+
+    ON AURA UNE CLASSE Newsletter
+    => ON APPELLE ENTITE/ENTITY UNE CLASSE QUI EST RELIEE A UNE TABLE SQL 
+        (PERSISTENCE...)
+
+    ET DANS NOTRE CLASSE, ON AURA DES PROPRIETES 
+    => CES PROPRIETES VONT DEVENIR DES COLONNES DANS NOTRE TABLE SQL
+        (ORM Object Relationship Mapping)
+
+    EN PHP, ON A                EN SQL, ON A
+    UNE CLASSE Newsletter       UNE TABLE newsletter
+    UNE PROPRIETE               UNE COLONNE
+        id                          id
+        nom                         nom
+        email                       email
+        dateInscription             date_inscription
+
+
+    php bin/console make:entity
+
+    => ASSISTANT POUR CREER LA CLASSE ET LES PROPRIETES
+
+    ENSUITE QUAND ON EST BON SUR LA CLASSE ENTITE Newsletter.php
+    ON PEUT LANCER LA COMMANDE SUIVANTE...
+
+    php bin/console make:migration
+
+    => CREE UN FICHIER DANS LE DOSSIER migrations
+    => IL Y A LE CODE SQL QUI PERMET DE CREER LA TABLE SQL
+
+    ENSUITE, IL FAUT LANCER LA COMMANDE POUR EXECUTER LA REQUETE SQL
+
+    php bin/console doctrine:migrations:migrate
+
+## GENERER UN CRUD A PARTIR D'UNE ENTITE
+
+    NOUVELLE VERSION DEPUIS 2018
+    https://symfony.com/blog/new-and-improved-generators-for-makerbundle#added-a-new-make-crud-generator
+
+    ON A UNE LIGNE DE COMMANDE QUI PERMET DE GENERER LE CODE POUR UN CRUD A PARTIR D'UNE ENTITE
+
+    php bin/console make:crud
+
+    The class name of the entity to create CRUD (e.g. BravePopsicle):
+    > Newsletter
+    Newsletter
+
+    created: src/Controller/NewsletterController.php
+    created: src/Form/NewsletterType.php
+    created: templates/newsletter/_delete_form.html.twig
+    created: templates/newsletter/_form.html.twig
+    created: templates/newsletter/edit.html.twig 
+    created: templates/newsletter/index.html.twig
+    created: templates/newsletter/new.html.twig       
+    created: templates/newsletter/show.html.twig      
+
+            
+    Success! 
+            
+
+    Next: Check your new CRUD by going to /newsletter/
+
+
+    PAUSE ET REPRISE A 15H45...
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
