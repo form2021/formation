@@ -71,5 +71,61 @@ class SiteController extends AbstractController
 
 ```
 
+### CREER DES LIENS VERS LES ROUTES DANS TWIG
 
+
+    https://symfony.com/doc/current/templates.html#linking-to-pages
+
+    https://symfony.com/doc/current/reference/twig_reference.html#path
+
+```twig
+
+        <nav>
+            <a href="{{ path('index') }}">accueil</a>
+            <a href="{{ path('galerie') }}">galerie</a>
+            <a href="{{ path('contact') }}">contact</a>
+        </nav>
+
+```
+
+## CREER DES URLS POUR LES FICHIERS CSS, JS, IMAGES, etc...
+
+    https://symfony.com/doc/current/templates.html#linking-to-css-javascript-and-image-assets
+
+```twig
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Projet Symfony</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ path('index') }}">accueil</a>
+            <a href="{{ path('galerie') }}">galerie</a>
+            <a href="{{ path('contact') }}">contact</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>MON TITRE1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, numquam in, mollitia culpa quia nostrum eius amet modi ipsam minus inventore assumenda eum ipsum voluptates, totam quibusdam similique consequatur expedita?</p>
+            <img src="{{ asset('images/photo1.jpg') }}" alt="photo1">
+        </section>
+    </main>
+    <footer>
+        <p>tous droits réservés</p>
+    </footer>
+    <script src="{{ asset('js/script.js') }}"></script>
+</body>
+</html>
+
+```
+
+
+    PAUSE ET REPRISE A 11H15...
+    
 
