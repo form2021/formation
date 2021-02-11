@@ -129,10 +129,47 @@ class SiteController extends AbstractController
     PAUSE ET REPRISE A 11H15...
 
 
-## EXO EN AUTONOMIE (30 MINUTES)
+## EXO EN AUTONOMIE (60 MINUTES)
 
     AJOUTER DES BLOCS DANS LE TEMPLATE PARENT
     ET REMPLIR LES BLOCS DANS LES TEMPLATES ENFANTS
 
     OBJECTIF: ARRIVER A CONSTRUIRE UN SITE AVEC DU CONTENU DIFFERENT SUR LES 3 PAGES...
-    
+
+    NE PAS HESITER A POSER DES QUESTIONS...
+
+## BASE DE DONNEES ET SYMFONY
+
+    https://symfony.com/doc/current/doctrine.html
+
+    https://www.doctrine-project.org/
+
+    * VIDEOS TUTOS (CERTAINES PAYANTES...)
+    https://symfonycasts.com/screencast/symfony-doctrine
+
+    SYMFONY UTILISE LE CODE DU PROJET DOCTRINE POUR GERER LA PARTIE AVEC LA DATABASE...
+
+
+    AJOUTER LA LIGNE DE CONFIG DANS LE FICHIER .env
+
+```
+###> doctrine/doctrine-bundle ###
+# Format described at https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
+# IMPORTANT: You MUST configure your server version, either here or in config/packages/doctrine.yaml
+#
+# DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
+# DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7"
+# DATABASE_URL="postgresql://db_user:db_password@127.0.0.1:5432/db_name?serverVersion=13&charset=utf8"
+# AVEC VOTRE SERVEUR LARAGON
+# DATABASE_URL="mysql://root:@localhost:3306/symfony?serverVersion=5.7"
+# DANS MON CAS 
+DATABASE_URL="mysql://root:@localhost:3306/symfony?serverVersion=mariadb-10.4.17"
+###< doctrine/doctrine-bundle ###
+
+```
+    ET ENSUITE DANS LE TERMINAL LANCER LA COMMANDE
+
+    php bin/console doctrine:database:create
+
+    ET SI TOUT SE PASSE BIEN, ON PEUT VERIFIER AVEC PHPMYADMIN QUE LA DATABASE EST CREEE...
+
