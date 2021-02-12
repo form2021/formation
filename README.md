@@ -80,4 +80,6 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?5B7E4396136B4B071A78E0002
 
     N'HESITEZ PAS A POSER DES QUESTIONS...
 
+    PAUSE DEJEUNER ET REPRISE A 14H...
+
 
