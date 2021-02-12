@@ -4,9 +4,10 @@
 
 ## liveshare
 
-    vendredi 12/02
+    vendredi après-midi 12/02
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?5B7E4396136B4B071A78E0002CEF4E7889F0
+https://prod.liveshare.vsengsaas.visualstudio.com/join?D42586EABC60C2FDD1EA8B7AD80D5ACF5F91
+
 
 ## questions ??
 
@@ -82,4 +83,93 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?5B7E4396136B4B071A78E0002
 
     PAUSE DEJEUNER ET REPRISE A 14H...
 
+## REPRENDRE LE CODE CREATE DU CRUD POUR COPIER LE FORMULAIRE DANS LA PAGE PUBLIQUE
+
+
+    FORMULAIRE DE NEWSLETTER
+    FORMULAIRE DE CONTACT
+
+    changer le code PHP
+    changer le code twig
+
+```php
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+// ne pas oublier de rajouter les lignes use...
+use Symfony\Component\HttpFoundation\Request;
+use App\Entity\Newsletter;
+use App\Form\NewsletterType;
+
+class SiteController extends AbstractController
+{
+    #[Route('/', name: 'index', methods: ['GET', 'POST'])]
+    public function index(Request $request): Response
+    {
+        $messageConfirmation    = 'merci de remplir le formulaire';
+        $classConfirmation      = 'gris';
+
+        $newsletter = new Newsletter(); // code créé avec le make:entity
+        $form = $this->createForm(NewsletterType::class, $newsletter);
+        $form->handleRequest($request);
+        // bloc if pour le traitement du formulaire
+        if ($form->isSubmitted() && $form->isValid()) {
+            // alors on traite le formulaire
+
+            // ici on peut compléter les infos manquantes
+            $objetDate = new \DateTime();   // objet qui contient la date actuelle
+            $newsletter->setDateInscription($objetDate);
+    
+            // on envoie les infos en base de données
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($newsletter);
+            $entityManager->flush();
+
+            // tout s'est bien passé
+            $messageConfirmation    = 'merci de votre inscription';
+            $classConfirmation      = 'vert';
+
+            // pas de redirection pour la page d'accueil
+            // return $this->redirectToRoute('newsletter_index');
+        }
+
+        return $this->render('site/index.html.twig', [
+            'classConfirmation'     => $classConfirmation,
+            'messageConfirmation'   => $messageConfirmation,    // tuyau de transmission entre PHP et twig
+            'newsletter' => $newsletter,
+            'form' => $form->createView(),
+            'controller_name' => 'SiteController',
+        ]);
+    }
+
+    // ...
+}
+
+```
+
+```twig
+{% extends 'parent.html.twig' %}
+
+{# 
+le template enfant ne fait que remplir 
+des blocks definis par le parent
+#}
+
+{% block titre1 %}
+<h1>Accueil PAR DEV1</h1>
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="{{ classConfirmation ?? 'gris' }}">{{ messageConfirmation ?? "texte par défaut" }}</div>
+{{ form_end(form) }}
+
+{% endblock %}
+
+
+```
 
