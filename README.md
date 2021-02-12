@@ -35,5 +35,14 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?5B7E4396136B4B071A78E0002
     * ensuite, chaque dev travaille sur ses fichiers
     * chaque dev peut faire des commits (sauvegardes en local...)
     * et régulièrement, si tout marche correctement, partager votre code en faisant un push...
-    
 
+
+## CARTES EN JS
+
+    * SIMPLE ET EFFICACE
+    https://leafletjs.com/examples.html
+
+    * PLUS COMPLET MAIS PLUS COMPLEXE
+    https://developers.google.com/maps/documentation/javascript/examples/marker-simple
+
+    
