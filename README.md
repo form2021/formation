@@ -45,4 +45,19 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?5B7E4396136B4B071A78E0002
     * PLUS COMPLET MAIS PLUS COMPLEXE
     https://developers.google.com/maps/documentation/javascript/examples/marker-simple
 
+## GIT EN LIGNE DE COMMANDE
+
+    * pour commit
+
+    git add -A
+    git commit -a -m "message pour la modif"
+
+    * pour envoyer sur github.com
+
+    git push
+
+    * pour récupérer sur github.com
+
+    git pull
+
     
