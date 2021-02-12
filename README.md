@@ -60,4 +60,24 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?5B7E4396136B4B071A78E0002
 
     git pull
 
-    
+
+    PAUSE ET REPRISE A 11H15...
+
+## EXO: PREPARER UNE TABLE SQL POUR LE FORMULAIRE DE CONTACT
+
+    OBJECTIF:
+    (DANS LE MEME PROJET SYMFONY, ET LA MEME DATABASE...)
+    UTILISER TOUTE LA MECANIQUE SYMFONY (make:entity, make:crud, etc...)
+
+    AJOUTER LA TABLE SQL contact
+        id
+        email
+        nom
+        prenom
+        objet
+        message
+        dateMessage
+
+    N'HESITEZ PAS A POSER DES QUESTIONS...
+
+
