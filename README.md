@@ -4,175 +4,86 @@
 
 ## liveshare
 
-    vendredi après-midi 12/02
+    lundi 15/02
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?D42586EABC60C2FDD1EA8B7AD80D5ACF5F91
-
+https://prod.liveshare.vsengsaas.visualstudio.com/join?B41D3B9E942814ABD44E222C1CE311B08097
 
 ## questions ??
 
-## github.com pour le travail en équipe
+## GESTION DES UTILISATEURS ET SECURITE DANS SYMFONY
 
-    une personne dans l'équipe qui 
-    * créé le repository sur github.com
-    * crée le symfony pour le projet sur son ordinateur
-    * connecte son dossier symfony à le repository sur github.com
+    https://symfony.com/doc/current/security.html
 
-    * ensuite inviter les autres membres de l'équipe
-        => les autres membres doivent accepter l'invitation
-        => le repository devient commun à toute l'équipe
+    https://symfony.com/doc/current/security.html#a-create-your-user-class
 
-    * les autres membres vont cloner le repository sur leur ordinateur
-        => attention: le clone fournit une installation incomplète
-    * et il faut compléter l'installation avec la ligne de commande
-        ouvrir un terminal dans le dossier symfony du projet
-        et lancer la commande 
+    LANCER DANS LE TERMINAL (DANS LE DOSSIER symfony/)
 
-        composer install
+    php bin/console make:user
 
-        et il faut aussi importer la base de données SQL
-        (soit en export/import avec phpmyadmin... soit avec les commandes de symfony...)
+    ON A UNE BASE DE CODE POUR L'ENTITE User
+    MAIS IL MANQUE DES PROPRIETES
 
-    * ensuite, chaque dev travaille sur ses fichiers
-    * chaque dev peut faire des commits (sauvegardes en local...)
-    * et régulièrement, si tout marche correctement, partager votre code en faisant un push...
+    email           string(255)      VARCHAR(255)
+    dateCreation    datetime         DATETIME
+    ...
 
+    LANCER LA COMMANDE POUR COMPLETER LES PROPRIETES...
 
-## CARTES EN JS
+    php bin/console make:entity
 
-    * SIMPLE ET EFFICACE
-    https://leafletjs.com/examples.html
+    SE POSER DES QUESTIONS SUR LE RGPD ET LA LEGALITE DES INFOS SUR LES UTILISATEURS...
 
-    * PLUS COMPLET MAIS PLUS COMPLEXE
-    https://developers.google.com/maps/documentation/javascript/examples/marker-simple
+    * CONNECTER NOTRE ENTITE AVEC LE SYSTEME DE SECURITE DE SYMFONY
 
-## GIT EN LIGNE DE COMMANDE
-
-    * pour commit
-
-    git add -A
-    git commit -a -m "message pour la modif"
-
-    * pour envoyer sur github.com
-
-    git push
-
-    * pour récupérer sur github.com
-
-    git pull
+    https://symfony.com/doc/current/security/form_login_setup.html#generating-the-login-form
 
 
-    PAUSE ET REPRISE A 11H15...
+    * ON VA LANCER LA COMMANDE 
 
-## EXO: PREPARER UNE TABLE SQL POUR LE FORMULAIRE DE CONTACT
+    php bin/console make:registration-form
 
-    OBJECTIF:
-    (DANS LE MEME PROJET SYMFONY, ET LA MEME DATABASE...)
-    UTILISER TOUTE LA MECANIQUE SYMFONY (make:entity, make:crud, etc...)
-
-    AJOUTER LA TABLE SQL contact
-        id
-        email
-        nom
-        prenom
-        objet
-        message
-        date_message
-
-    N'HESITEZ PAS A POSER DES QUESTIONS...
-
-    PAUSE DEJEUNER ET REPRISE A 14H...
-
-## REPRENDRE LE CODE CREATE DU CRUD POUR COPIER LE FORMULAIRE DANS LA PAGE PUBLIQUE
+    CA VA GENERER LE CODE...
+    https://symfonycasts.com/screencast/symfony-forms/registration-form
 
 
-    FORMULAIRE DE NEWSLETTER
-    FORMULAIRE DE CONTACT
+    LE SITE A CASSE CAR IL ME MANQUE UN BUNDLE POUR L'ENVOI D'EMAIL DE CONFIRMATION
 
-    changer le code PHP
-    changer le code twig
+    DANS LE TERMINAL (ET DANS LE DOSSIER syfmony/)
 
-```php
-<?php
+    composer require symfonycasts/verify-email-bundle
 
-namespace App\Controller;
+    SI ON ESSAIE D'ALLER SUR LA PAGE /register POUR CREER UN COMPTE
+    ON A UNE ERREUR SUR LA CONFIG MAILER_DSN
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-// ne pas oublier de rajouter les lignes use...
-use Symfony\Component\HttpFoundation\Request;
-use App\Entity\Newsletter;
-use App\Form\NewsletterType;
-
-class SiteController extends AbstractController
-{
-    #[Route('/', name: 'index', methods: ['GET', 'POST'])]
-    public function index(Request $request): Response
-    {
-        $messageConfirmation    = 'merci de remplir le formulaire';
-        $classConfirmation      = 'gris';
-
-        $newsletter = new Newsletter(); // code créé avec le make:entity
-        $form = $this->createForm(NewsletterType::class, $newsletter);
-        $form->handleRequest($request);
-        // bloc if pour le traitement du formulaire
-        if ($form->isSubmitted() && $form->isValid()) {
-            // alors on traite le formulaire
-
-            // ici on peut compléter les infos manquantes
-            $objetDate = new \DateTime();   // objet qui contient la date actuelle
-            $newsletter->setDateInscription($objetDate);
-    
-            // on envoie les infos en base de données
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($newsletter);
-            $entityManager->flush();
-
-            // tout s'est bien passé
-            $messageConfirmation    = 'merci de votre inscription';
-            $classConfirmation      = 'vert';
-
-            // pas de redirection pour la page d'accueil
-            // return $this->redirectToRoute('newsletter_index');
-        }
-
-        return $this->render('site/index.html.twig', [
-            'classConfirmation'     => $classConfirmation,
-            'messageConfirmation'   => $messageConfirmation,    // tuyau de transmission entre PHP et twig
-            'newsletter' => $newsletter,
-            'form' => $form->createView(),
-            'controller_name' => 'SiteController',
-        ]);
-    }
-
-    // ...
-}
-
-```
-
-```twig
-{% extends 'parent.html.twig' %}
-
-{# 
-le template enfant ne fait que remplir 
-des blocks definis par le parent
-#}
-
-{% block titre1 %}
-<h1>Accueil PAR DEV1</h1>
-
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-    <div class="{{ classConfirmation ?? 'gris' }}">{{ messageConfirmation ?? "texte par défaut" }}</div>
-{{ form_end(form) }}
-
-{% endblock %}
+    https://symfony.com/doc/current/mailer.html
 
 
-```
+    PAUSE ET REPRISE A 11H25...
 
-    PAUSE ET REPRISE A 15H55
+    LA PAGE /register S'AFFICHE MAIS ON N'A PAS LA TABLE SQL
 
-        
+    php bin/console make:migration
+
+    php bin/console doctrine:migrations:migrate
+
+    AJOUTER LE CHAMP email DANS LE FORMULAIRE
+
+    AJOUTER LA DATE PAR DEFAUT POUR LA PROPRIETE dateCreation
+
+    => ON A UN FORMULAIRE DE CREATION QUI FONCTIONNE
+
+    ENSUITE VERIFIER LA PAGE /login
+
+    => IL FAUT COMPLETER LE CODE PHP POUR REDIRIGER VERS LA BONNE PAGE
+
+   PAUSE DEJEUNER ET REPRISE A 14H...
+
+
+
+
+
+
+
+
+
+
