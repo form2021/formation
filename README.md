@@ -202,9 +202,16 @@ class User implements UserInterface
 
     id
     titre
+    slug
     contenu
     image
     datePublication
+
+    UNE FOIS LE make:crud FAIT
+    ON PEUT CREER DES ANNONCES DANS LA PARTIE /admin/annonce
+
+    * AJOUTER DANS LA PARTIE PUBLIQUE UNE PAGE /annonces
+        QUI VA AFFICHER LES ANNONCES POUR LES VISITEURS 
 
     RAJOUTER LES RELATIONS DANS UN 2E TEMPS
     user_id     => ONE TO MANY (relation avec User)
