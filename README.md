@@ -78,7 +78,78 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?B41D3B9E942814ABD44E222C1
 
    PAUSE DEJEUNER ET REPRISE A 14H...
 
+## PROTECTION DE LA PARTIE ADMIN
 
+    RAJOUTER UNE LIGNE DANS LE FICHIER 
+    config/packages/security.yaml
+
+```yaml
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+
+```
+
+
+## PROTEGER LES FORMULAIRES EN AJOUTANT DES CONTRAINTES
+
+    * LISTE DES CONTRAINTES DISPONIBLES
+    https://symfony.com/doc/current/reference/constraints.html
+
+    * LIGNE UNIQUE
+    https://symfony.com/doc/current/reference/constraints/UniqueEntity.html
+
+    * PROPRIETE EMAIL
+    https://symfony.com/doc/current/reference/constraints/Email.html
+
+    ON PEUT AJOUTER DES CONTRAINTES SUR LES ENTITES AVEC DES ANNOTATIONS
+    MAIS AUSSI DANS LES FORMULAIRES AVEC DU CODE PHP
+
+```php
+// ...
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+// ...
+use Symfony\Component\Validator\Constraints as Assert;
+
+
+/**
+ * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
+ * @UniqueEntity(fields={"email"}, message="il y a déjà un compte avec cet email")
+ */
+class User implements UserInterface
+{
+    // ...
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Email(
+     *     message = "désolé '{{ value }}' n'est pas un email valide."
+     * )
+     */
+    private $email;
+
+    // ...
+
+}
+
+```
+
+
+## PERSONNALISER LES FORMULAIRES AVEC TWIG
+
+    * PLUSIEURS NIVEAUX DE DETAILS SONT DISPONIBLES 
+        POUR PRENDRE LA MAIN SUR LE CODE HTML DES FORMULAIRES
+
+    https://symfony.com/doc/current/form/form_customization.html
+
+
+    PAUSE ET REPRISE A 15H50
+    
 
 
 
