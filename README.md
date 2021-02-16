@@ -118,3 +118,77 @@ class ExampleService
 }
 
 ```
+
+
+## TESTS AUTOMATISES AVEC PHPUNIT
+
+    * A DECOUVRIR: COMMENT CREER DES TESTS AUTOMATISES DANS SYMFONY AVEC PHPUNIT
+    https://symfony.com/doc/current/testing.html#your-first-functional-test
+
+
+## PROTEGER ESPACE MEMBRE
+
+    AJOUTER UNE REGLE DANS LE FICHIER config/packages/security.yaml
+    ET AUSSI METTRE A JOUR LA REDIRECTION DANS src/Security/LoginFormAuthenticator.php
+
+
+```yaml
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/membre, roles: ROLE_USER }
+
+
+```
+
+
+```php
+
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)
+    {
+        if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
+            return new RedirectResponse($targetPath);
+        }
+
+        // IL FAUT RECUPERER L'UTILISATEUR CONNECTE
+        // ET SUIVANT LE ROLE DE L'UTILISATEUR, ON LE REDIRIGE VERS L'ESPACE ADMIN OU MEMBRE
+        // https://symfony.com/doc/current/security.html#b-fetching-the-user-from-a-service
+        // https://symfony.com/doc/current/security.html#hierarchical-roles
+        // $userConnecte = $this->security->getUser();
+        // BAD
+        // $isAdmin = in_array("ROLE_ADMIN", $userConnecte->getRoles());
+
+        // GOOD
+        $nomRouteRedirection = "index";
+        if ($this->security->isGranted("ROLE_ADMIN")) {
+            // redirection vers la page /admin
+            $nomRouteRedirection = "admin";
+        }
+        elseif ($this->security->isGranted("ROLE_USER")) {
+            // redirection vers la page /membre
+            $nomRouteRedirection = "membre";
+        }
+
+        // For example : 
+        // TODO: CHANGER LA REDIRECTION VERS UNE PAGE ESPACE MEMBRE
+        // POUR LE MOMENT, ON REDIRIGE VERS LA PAGE D'ACCUEIL...
+        return new RedirectResponse($this->urlGenerator->generate($nomRouteRedirection));
+        // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+    }
+
+
+```
+
+## AJOUTER UNB FORMULAIRE POUR CREER UNE ANNONCE
+
+
+    DANS LA PAGE D'ESPACE MEMBRE
+    AJOUTER UN FORMULAIRE POUR PERMETTRE A UN MEMBRE DE PUBLIER UNE ANNONCE
+
+    BONUS:
+    CREER LA PAGE /annonces DANS LA PARTIE PUBLIQUE POUR LES VISITEURS
+    ET AFFICHER LA LISTE DES ANNONCES DANS CETTE PAGE
+
+    CHECKPOINT A 15H...
+    
