@@ -490,7 +490,9 @@ class MembreController extends AbstractController
 
     PAUSE ET REPRISE A 15H45
 
+    AUTONOMIE POUR LE RESTE DE LA JOURNEE...
 
+    
 
 
 
