@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1><a href="page.html">bases de ajax</a></h1>
+        <pre id="chat"></pre>
+        <hr>
+        <input type="text" id="message">
+        <button onclick="chargerContenuAjax(event)">cliquer ici</button>
+    </section>
+    <script>
+async function chargerContenuAjax(event)
+{
+    // debug
+    // console.log(event.target);
+
+    // on récupère la saisie dans le champ message
+    let messageSaisie = message.value;
+    console.log(messageSaisie);
+
+    refreshAjax(messageSaisie);
+}  
+
+async function refreshAjax (messageSaisie='')
+{
+    let formData = new FormData;    // objet qui contient les infos à transmettre (comme un formulaire en JS)
+    formData.append('messageSaisie', messageSaisie);
+    // ON VA APPELER LA FONCTION fetch POUR CHARGER DU CONTENU DEPUIS LE FICHIER ajax.php
+    let reponseServeur = await fetch("ajax.php", {
+        method: 'POST',
+        body: formData
+    });
+
+    // JS attend la réponse du serveur ajax.php avant de continuer le code
+
+    // SI LE SERVEUR ENVOIE UNE SEULE INFO
+    // JE PEUX RECUPERER L'INFO AVEC .text()
+    let contenuAjax = await reponseServeur.text();
+
+    console.log(contenuAjax);
+
+    // ON PEUT EN JS MODIFIER LA PAGE POUR AJOUTER LE CONTENU DANS LA PAGE
+    chat.innerHTML = `<div>${contenuAjax}</div>`;
+
+}
+
+setInterval(refreshAjax, 5000);
+
+    </script>
+</body>
+</html>

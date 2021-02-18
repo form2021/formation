@@ -131,6 +131,38 @@ class AnnonceType extends AbstractType
     https://animejs.com/
 
 
+## JAVASCRIPT AJAX
+
+    Asynhronous
+    Javascript
+    And
+    XML     => eXtended Markup Language
+
+    * API FETCH
+    https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch
+
+    MAINTENANT ON COMBINE JS ET LE FORMAT JSON
+    JSON    JavaScript Object Notation
+
+
+# FRAMEWORK VUEJS V3
+
+    V3 VERSION SORTIE IL Y A QUELQUES MOIS (FIN SEPTEMBRE 2020)
+    MAIS PAS COMPLETEMENT TRADUIT EN FRANCAIS
+    https://v3.vuejs.org/guide/introduction.html
+
+    V2 TRADUITE EN FRANCAIS ET BONNE QUALITE DOC
+    (MAIS CHANGEMENTS ASSEZ CONSEQUENTS ENTRE V2 ET V3...)
+    https://fr.vuejs.org/v2/guide/index.html
+
+    PAUSE ET REPRISE A 14H10...
+
+
+
+
+
+
+
 
 
 
