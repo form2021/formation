@@ -125,4 +125,12 @@ class AnnonceType extends AbstractType
     https://github.com/FirebaseExtended/firechat
 
 
-    
+## ANIMEJS
+
+    * POUR FAIRE DES ANIMATIONS RAPIDEMENT ET FACILEMENT
+    https://animejs.com/
+
+
+
+
+
