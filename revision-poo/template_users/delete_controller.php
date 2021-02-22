@@ -12,7 +12,7 @@ if (!empty($_GET)) {
         $id     = intval($_GET["id"]);      // convertir en nombre
 
         require_once "users_model.php";
-        delete_model($id);
+        User::delete_model($id);
         
         // on peut ajouter une redirection vers read.php
 

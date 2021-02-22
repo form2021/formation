@@ -15,7 +15,7 @@ if (!empty($_POST)) {
         $sexe   = strip_tags($_POST["sexe"]);       // limiter aux choix "Madame" "Monsieur" "Autre"
 
         require_once "users_model.php";
-        update_model($id, $email, $pseudo, $sexe);
+        User::update_model($id, $email, $pseudo, $sexe);
 
         // on peut ajouter une redirection vers read.php
 

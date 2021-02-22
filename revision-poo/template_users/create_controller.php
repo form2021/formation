@@ -14,7 +14,7 @@ if (!empty($_POST)) {
         $sexe   = strip_tags($_POST["sexe"]);       // limiter aux choix "Madame" "Monsieur" "Autre"
 
         require_once "users_model.php";
-        create_model($email, $pseudo, $sexe);
+        User::create_model($email, $pseudo, $sexe);
 
         // on peut ajouter une redirection vers read.php
 

@@ -1,7 +1,7 @@
 <?php 
 
 require_once "users_model.php"; // chargement des déclarations de fonctions
-$users = read_model();                   // on appelle la fonction read_model 
+$users = User::read_model();                   // on appelle la fonction read_model 
 
 ?>
 <!--
