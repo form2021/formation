@@ -27,7 +27,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?2CA665E7A5E7475286AA0DBB7
     * sujet
 
     au moins 2 tables sql avec jointures OneToMany et ManyToMany
-    database    revision_poo
+    database    revision_poo    AVEC CHARSET utf8mb4_general_ci
 
     users
         id          INT                 INDEX=PRIMARY       A_I
@@ -68,7 +68,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?2CA665E7A5E7475286AA0DBB7
     => ON PEUT SE FACILITER LE DEVELOPPEMENT 
         EN LAISSANT LES COLONNES DE CLE ETRANGERE SANS CONTRAINTE
         ET AJOUTER LES CONTRAINTES DE CLE ETRANGERE EN FIN DE DEVELOPPEMENT 
-        
+
     CREER DES PAGES CRUD SUR TOUTES CES TABLES...
 
     AUTONOMIE: (CHECKPOINT A 10H00...)
@@ -153,9 +153,18 @@ DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
 
     AUTONOMIE ET CHECKPOINT A 11H45...
 
+    NE PAS HESITER A POSER DES QUESTIONS...
 
+    NOUVEAU CHECKPOINT A 12H...
 
+    * READ
+    On affiche les infos dans des balises HTML table
+        (comme phpmyadmin...)
 
+    SI ON DEMARRE AVEC LE READ, IL FAUT DES LIGNES A AFFICHER
+    => INSERER LES LIGNES AVEC PHPMYADMIN...
+
+    
 
 
 
