@@ -28,6 +28,7 @@ $users = $query->fetchAll();        // tableau ordonné de tableaux associatifs
             <td>email</td>
             <td>pseudo</td>
             <td>sexe</td>
+            <td>supprimer</td>
         </tr>
     </thead>
     <tbody>
@@ -37,6 +38,9 @@ $users = $query->fetchAll();        // tableau ordonné de tableaux associatifs
         <td><?= $user["email"] ?></td>
         <td><?= $user["pseudo"] ?></td>
         <td><?= $user["sexe"] ?></td>
+        <td>
+            <a href="delete.php?id=<?php echo $user["id"] ?>">supprimer</a>
+        </td>
     </tr>
 <?php endforeach; ?>
     </tbody>
@@ -50,6 +54,7 @@ $users = $query->fetchAll();        // tableau ordonné de tableaux associatifs
             <td>email</td>
             <td>pseudo</td>
             <td>sexe</td>
+            <td>supprimer</td>
         </tr>
     </thead>
     <tbody>
@@ -64,6 +69,9 @@ foreach ($users as $user) {
         <td>$email</td>
         <td>$pseudo</td>
         <td>$sexe</td>
+        <td>
+            <a href="delete.php?id=$id">supprimer</a>
+        </td>
     </tr>
     x;
 }
