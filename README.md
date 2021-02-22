@@ -64,9 +64,70 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?2CA665E7A5E7475286AA0DBB7
     
     CREER DES PAGES CRUD SUR TOUTES CES TABLES...
 
-    AUTONOMIE: (CHECKPOINT A 09H45...)
+    AUTONOMIE: (CHECKPOINT A 10H00...)
     * CREER LES 4 TABLES SQL AVEC PHPMYADMIN OU EN MODE CODE SQL...
         TOUS LES CHAMPS SONT OBLIGATOIRES
+
+## CLES PRIMAIRES ET CLES COMPOSITES
+
+    https://openclassrooms.com/fr/courses/1959476-administrez-vos-bases-de-donnees-avec-mysql/1963057-cles-primaires-et-etrangeres
+
+    * CLE COMPOSITE
+
+```sql
+
+ALTER TABLE nom_table
+ADD [CONSTRAINT [symbole_contrainte]] PRIMARY KEY (colonne_pk1 [, colonne_pk2, ...]);
+
+
+ALTER TABLE `articles_categories`
+  ADD PRIMARY KEY (`article_id`, `categorie_id`);
+
+
+ALTER TABLE articles_categories
+ADD CONSTRAINT cle_composite_articles_categories PRIMARY KEY (article_id, categorie_id)
+
+
+```
+
+### AJOUTER LES PAGES CRUD POUR CHAQUE TABLE SQL
+
+    COMMENCER PAR UN CRUD SUR UNE TABLE SQL
+
+    NOTE: CHOIX LE PLUS SIMPLE => categories
+
+    VOTRE CHOIX: LA TABLE SQL users
+
+    CREER LE CODE PHP POUR EFFECTUER UN CRUD
+
+    * PREMIER OBJECTIF:     AVOIR UN CODE QUI MARCHE
+    * DEUXIEME OBJECTIF:    AVOIR UN CODE MVC 
+    * TROISIEME OBJECTIF:   AVOIR UN CODE EN PROGRAMMATION ORIENTE OBJET
+
+    BASE:
+        CREER UN DOSSIER revision-poo/
+        CHOISIR LE NOMBRE DE PAGES/FICHIERS POUR LE CRUD SUR users
+        (GARDER EN TETE QU'ON DEVRA FAIRE UN CRUD POUR CHAQUE TABLE SQL...)
+
+    PAUSE ET REPRISE 11H15
+
+    AUTONOMIE ET CHECKPOINT A 11H45...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
