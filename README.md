@@ -88,6 +88,33 @@ ALTER TABLE articles_categories
 ADD CONSTRAINT cle_composite_articles_categories PRIMARY KEY (article_id, categorie_id)
 
 
+-- code symfony
+CREATE TABLE annonce_categorie 
+(
+    annonce_id INT NOT NULL, 
+    categorie_id INT NOT NULL, 
+    INDEX IDX_3C5A3DA68805AB2F (annonce_id), 
+    INDEX IDX_3C5A3DA6BCF5E72D (categorie_id), 
+    PRIMARY KEY(annonce_id, categorie_id)
+) 
+DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
+
+```
+
+    AVEC SYMFONY:
+
+
+```php
+
+    public function up(Schema $schema) : void
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->addSql('CREATE TABLE annonce_categorie (annonce_id INT NOT NULL, categorie_id INT NOT NULL, INDEX IDX_3C5A3DA68805AB2F (annonce_id), INDEX IDX_3C5A3DA6BCF5E72D (categorie_id), PRIMARY KEY(annonce_id, categorie_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE annonce_categorie ADD CONSTRAINT FK_3C5A3DA68805AB2F FOREIGN KEY (annonce_id) REFERENCES annonce (id) ON DELETE CASCADE');
+        $this->addSql('ALTER TABLE annonce_categorie ADD CONSTRAINT FK_3C5A3DA6BCF5E72D FOREIGN KEY (categorie_id) REFERENCES categorie (id) ON DELETE CASCADE');
+    }
+
+
 ```
 
 ### AJOUTER LES PAGES CRUD POUR CHAQUE TABLE SQL
@@ -99,6 +126,12 @@ ADD CONSTRAINT cle_composite_articles_categories PRIMARY KEY (article_id, catego
     VOTRE CHOIX: LA TABLE SQL users
 
     CREER LE CODE PHP POUR EFFECTUER UN CRUD
+    ORDRE PRATIQUE:
+    * CREATE
+    * READ
+    * DELETE        => SUR id POUR SAVOIR QUELLE LIGNE SUPPRIMER
+    * UPDATE        => GARDER POUR LA FIN CAR LE PLUS DIFFICILE
+
 
     * PREMIER OBJECTIF:     AVOIR UN CODE QUI MARCHE
     * DEUXIEME OBJECTIF:    AVOIR UN CODE MVC 
