@@ -13,8 +13,9 @@ if (!empty($_POST)) {
         $pseudo = strip_tags($_POST["pseudo"]);     // pas de caractères spéciaux et unique
         $sexe   = strip_tags($_POST["sexe"]);       // limiter aux choix "Madame" "Monsieur" "Autre"
 
-        require_once "create_model.php";
-        
+        require_once "users_model.php";
+        create_model($email, $pseudo, $sexe);
+
         // on peut ajouter une redirection vers read.php
 
     }

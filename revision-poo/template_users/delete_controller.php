@@ -11,7 +11,8 @@ if (!empty($_GET)) {
         // plein de verif à faire...
         $id     = intval($_GET["id"]);      // convertir en nombre
 
-        require_once "delete_model.php";
+        require_once "users_model.php";
+        delete_model($id);
         
         // on peut ajouter une redirection vers read.php
 
