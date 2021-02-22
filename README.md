@@ -35,7 +35,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?2CA665E7A5E7475286AA0DBB7
         pseudo      VARCHAR(255)
         sexe        ENUM("Monsieur", "Madame", "Autre")
 
-        => OneToMany    Un Article est publié par un auteur
+        => OneToMany    Un article est publié par un auteur
 
     articles
         id                  INT         INDEX=PRIMARY       A_I
@@ -44,7 +44,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?2CA665E7A5E7475286AA0DBB7
         date_publication    DATETIME
         user_id             INT         => CLE ETRANGERE VERS users
 
-        => ManyToMany   Un Article peut être classé dans plusieurs catégories
+        => ManyToMany   Un article peut être classé dans plusieurs catégories
         => IL FAUT UNE TABLE EN PLUS...
 
     categories
@@ -59,13 +59,15 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?2CA665E7A5E7475286AA0DBB7
     exemple avec colonne ENUM
 
     NOTE: UN ManyToMany EST UNE COMBINAISON DE 2 OneToMany
-        => 2 COLONNES DE CLE ETRANGERES
+        => 2 COLONNES DE CLES ETRANGERES
 
     
     CREER DES PAGES CRUD SUR TOUTES CES TABLES...
 
     AUTONOMIE: (CHECKPOINT A 09H45...)
     * CREER LES 4 TABLES SQL AVEC PHPMYADMIN OU EN MODE CODE SQL...
+        TOUS LES CHAMPS SONT OBLIGATOIRES
+
 
 
 
