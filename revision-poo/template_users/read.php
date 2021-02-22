@@ -1,25 +1,4 @@
-<?php
-// on mettra le read pour users
-// actuellement
-// pas de fonction
-// pas de classe
-// pas mvc
-
-// model
-// on commence à se connecter avec connect.php
-require_once "../connect.php";
-
-// on récupère les lignes
-// avec la requête
-$sql = "SELECT * FROM `users`";
-// https://www.php.net/manual/fr/pdo.query.php
-$query = $db->query($sql);
-
-// on récupère les lignes sélectionnées
-$users = $query->fetchAll();        // tableau ordonné de tableaux associatifs
-
-// view => html
-?>
+<?php require_once "read_model.php" ?>
 <!--
 <table>
     <thead>
@@ -39,7 +18,7 @@ $users = $query->fetchAll();        // tableau ordonné de tableaux associatifs
         <td><?= $user["pseudo"] ?></td>
         <td><?= $user["sexe"] ?></td>
         <td>
-            <a href="delete.php?id=<?php echo $user["id"] ?>">supprimer</a>
+            <a href="delete_controller.php?id=<?php echo $user["id"] ?>">supprimer</a>
         </td>
     </tr>
 <?php endforeach; ?>
@@ -70,7 +49,7 @@ foreach ($users as $user) {
         <td>$pseudo</td>
         <td>$sexe</td>
         <td>
-            <a href="delete.php?id=$id">supprimer</a>
+            <a href="delete_controller.php?id=$id">supprimer</a>
         </td>
     </tr>
     x;

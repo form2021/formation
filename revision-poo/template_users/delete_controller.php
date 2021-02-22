@@ -11,16 +11,8 @@ if (!empty($_GET)) {
         // plein de verif à faire...
         $id     = intval($_GET["id"]);      // convertir en nombre
 
-        // model
-        // on commence à se connecter avec connect.php
-        require_once "../connect.php";
-
-        $sql = "DELETE FROM `users` WHERE `id` = :id";
-
-        $query = $db->prepare($sql);
-        $query->bindValue("id", $id);   // ca marche aussi sans :
-        $query->execute();
-
+        require_once "delete_model.php";
+        
         // on peut ajouter une redirection vers read.php
 
     }
