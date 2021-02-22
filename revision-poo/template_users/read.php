@@ -5,10 +5,10 @@
 // pas de classe
 // pas mvc
 
+// model
 // on commence à se connecter avec connect.php
 require_once "../connect.php";
 
-// model
 // on récupère les lignes
 // avec la requête
 $sql = "SELECT * FROM `users`";
