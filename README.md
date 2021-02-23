@@ -10,6 +10,8 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?CE942E61E23D100BDA97A7E06
 
 ## questions ??
 
+    https://sql.sh/cours/jointures
+
     2 TABLES SQL
     SE POSER LA QUESTION DANS LES 2 SENS
     * POUR UNE LIGNE DE LA TABLE1 COMBIEN DE LIGNES SONT ASSOCIEES DANS LA TABLE 2 ?
@@ -105,4 +107,8 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?CE942E61E23D100BDA97A7E06
 
     NE PAS HESITER A POSER DES QUESTIONS...
 
-    
+
+    PAUSE ET REPRISE A 11H...
+
+    FIN DE QCM A 11H35...
+
