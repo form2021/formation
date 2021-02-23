@@ -45,6 +45,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?CE942E61E23D100BDA97A7E06
     INNER JOIN users
     ON users.id = articles.user_id
 ```
+
     Exemple:
     TABLE1 articles
                 id
@@ -94,3 +95,14 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?CE942E61E23D100BDA97A7E06
 13H00-17H00     EXAM FINAL
 
 
+## ACTIVITE EN AUTONOMIE
+
+    CONTINUER LES CRUDS SUR LES TABLES DU PROJET revision-poo
+    * users                 (PASSER LE CODE CONTROLLER EN POO)
+    * articles
+    * categories
+    * articles_categories
+
+    NE PAS HESITER A POSER DES QUESTIONS...
+
+    
