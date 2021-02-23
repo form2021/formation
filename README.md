@@ -112,3 +112,16 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?CE942E61E23D100BDA97A7E06
 
     FIN DE QCM A 11H35...
 
+## CONTRAINTE DE CLE ETRANGERE
+
+    https://openclassrooms.com/fr/courses/1959476-administrez-vos-bases-de-donnees-avec-mysql/1963057-cles-primaires-et-etrangeres
+
+```sql
+
+ALTER TABLE annonce ADD CONSTRAINT FK_F65593E5A76ED395 FOREIGN KEY (user_id) REFERENCES user (id)
+
+```
+
+    PAUSE DEJEUNER ET REPRISE A 12H55...
+    
+        
