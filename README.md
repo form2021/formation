@@ -71,16 +71,21 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
     SUR LE TEMPS DISPONIBLE
     => VOUS POUVEZ DEMANDER DE L'AIDE EN EQUIPE OU EN INIDIVIDUEL
 
+## EQUIPES
+
+    EQUIPE 1        GEEKANDSTART
+    EQUIPE 2        
+    EQUIPE 3        FIVE TASTIC
+    EQUIPE 4        (...)
+    EQUIPE 5        GAMELOC
+
+### mercredi 24/02
+
     10H45-11H       PAUSE
 
     13H00-14H00     DEJEUNER
-
+    14H00-14H15     EQUIPE 2 (bruno, mathieu, sophie, yanis)
     15H30-15H45     GOUTER
 
-    EQUIPE 1
-    EQUIPE 2
-    EQUIPE 3        FIVE TASTIC
-    EQUIPE 4
-    EQUIPE 5        GAMELOC
 
 
