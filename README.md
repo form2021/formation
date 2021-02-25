@@ -78,16 +78,19 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
 
     EQUIPE 1        GEEKANDSTART (akhmad, alexandre, ben hagi, hayet, mirsoidi)
     EQUIPE 2        SPORTIN (bruno, mathieu, sophie, yanis)
-    EQUIPE 3        FIVE TASTIC (doriane, johny, kevin, leila, nicolas)
+    EQUIPE 3        FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
     EQUIPE 4        GAMELOC (clément, florent, kristofer, olivier)
 
 ### jeudi 25/02
 
-    10H45-11H       PAUSE
-    12H00-12H15     EQUIPE 4 (clément, florent, kristofer, olivier)
+    10H45-11H00     PAUSE
+    12H00-12H15     E4/ GAMELOC (clément, florent, kristofer, olivier)
+    12H30-12H45     E1/ GEEKANDSTART (akhmad, alexandre, ben hagi, hayet, mirsoidi)
     13H00-14H00     DEJEUNER
-    14H00-14H15     EQUIPE 2 (bruno, mathieu, sophie, yanis)
+    14H00-14H15     E2/ SPORTIN (bruno, mathieu, sophie, yanis)
     15H30-15H45     GOUTER
+    16H15-16H30     E3/ FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
+
 
 ### mercredi 24/02
 
@@ -97,6 +100,6 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
     14H00-14H15     EQUIPE 2 (bruno, mathieu, sophie, yanis)
     14H30-14H45     EQUIPE 1 (akhmad, alexandre, ben hagi, hayet, mirsoidi)
     15H30-15H45     GOUTER
-    16H15-16H30     EQUIPE 3 (doriane, johny, kevin, leila, nicolas)
+    16H15-16H30     EQUIPE 3 (doriane, johnny, kevin, leila, nicolas)
 
 
