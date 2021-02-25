@@ -79,13 +79,20 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
     EQUIPE 1        GEEKANDSTART (akhmad, alexandre, ben hagi, hayet, mirsoidi)
     EQUIPE 2        SPORTIN (bruno, mathieu, sophie, yanis)
     EQUIPE 3        FIVE TASTIC (doriane, johny, kevin, leila, nicolas)
-    EQUIPE 4        (...)
-    EQUIPE 5        GAMELOC (clément, florent, kristofer, olivier)
+    EQUIPE 4        GAMELOC (clément, florent, kristofer, olivier)
+
+### jeudi 25/02
+
+    10H45-11H       PAUSE
+    12H00-12H15     EQUIPE 4 (clément, florent, kristofer, olivier)
+    13H00-14H00     DEJEUNER
+    14H00-14H15     EQUIPE 2 (bruno, mathieu, sophie, yanis)
+    15H30-15H45     GOUTER
 
 ### mercredi 24/02
 
     10H45-11H       PAUSE
-    12H10-12H25     EQUIPE 5 (clément, florent, kristofer, olivier)
+    12H10-12H25     EQUIPE 4 (clément, florent, kristofer, olivier)
     13H00-14H00     DEJEUNER
     14H00-14H15     EQUIPE 2 (bruno, mathieu, sophie, yanis)
     14H30-14H45     EQUIPE 1 (akhmad, alexandre, ben hagi, hayet, mirsoidi)
