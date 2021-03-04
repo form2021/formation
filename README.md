@@ -64,6 +64,55 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
 
 ### 10              MARS    => SOUTENANCE
 
+
+## ORGANISATION DU TRAVAIL
+
+    https://www.manager-go.com/efficacite-professionnelle/dossiers-methodes/matrice-eisenhower
+
+    100% = 10% + 20% + 30% + 40%
+    JOURNEE EN 4 ACTIVITES = 7H = 7x60 A PEU PRES 400 MINUTES
+    * 10%       SYNCHRO EQUIPE (ASSEMBLAGE ET HARMONISATION)
+    * 20%       HTML ET CSS
+    * 30%       ...
+    * 40%       ...
+
+    JOURNEE EN 8 ACTIVITES = 7H = 7x60 A PEU PRES 400 MINUTES
+        MATIN
+
+    * 10%
+    * 20%
+    * 30%
+    * 40%
+
+        APRES-MIDI
+
+    * 10%
+    * 20%
+    * 30%
+    * 40%
+
+    JOURNEE EN 16 ACTIVITES = 7H = 7x60 A PEU PRES 400 MINUTES
+        MATIN 1
+    * 10%
+    * 20%
+    * 30%
+    * 40%
+        MATIN 2
+    * 10%
+    * 20%
+    * 30%
+    * 40%
+        APRES-MIDI 1
+    * 10%
+    * 20%
+    * 30%
+    * 40%
+        APRES-MIDI 2
+    * 10%
+    * 20%
+    * 30%
+    * 40%
+
 ## planning de la journéee
 
     CHAQUE JOUR, JE DEMANDE UNE REUNION D'AVANCEMENT AVEC CHAQUE EQUIPE
@@ -80,6 +129,18 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
     EQUIPE 2        SPORTIN (bruno, mathieu, sophie, yanis)
     EQUIPE 3        FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
     EQUIPE 4        GAMELOC (clément, florent, kristofer, olivier)
+
+## jeudi 04/03
+
+    09H15-09H30     E3/ FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
+    10H00-10H15     E2/ SPORTIN (bruno, mathieu, sophie, yanis)
+    10H45-11H00     PAUSE
+    12H00-12H15     E4/ GAMELOC (clément, florent, kristofer, olivier)
+    13H00-14H00     DEJEUNER
+    15H30-15H45     GOUTER
+    16H15-16H30     E1/ GEEKANDSTART (akhmad, alexandre, ibrahim [absent], hayet, mirsoidi)
+
+    A CONFIRMER:
 
 ## mercredi 03/03
 
