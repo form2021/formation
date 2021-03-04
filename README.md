@@ -71,8 +71,10 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
     https://www.manager-go.com/efficacite-professionnelle/dossiers-methodes/matrice-eisenhower
 
     * GESTION DU TEMPS DE TRAVAIL
-    
+
     100% = 10% + 20% + 30% + 40%
+    (note: on peut mélanger l'ordre des 4 activités...)
+
     JOURNEE EN 4 ACTIVITES = 7H = 7x60 A PEU PRES 400 MINUTES
     * 10%       SYNCHRO EQUIPE (ASSEMBLAGE ET HARMONISATION)
     * 20%       HTML ET CSS
@@ -80,34 +82,34 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
     * 40%       ...
 
     JOURNEE EN 8 ACTIVITES = 7H = 7x60 A PEU PRES 400 MINUTES
-        MATIN
+        MATIN   (200 MINUTES)
     * 10%
     * 20%
     * 30%
     * 40%
-        APRES-MIDI
+        APRES-MIDI (200 MINUTES)
     * 10%
     * 20%
     * 30%
     * 40%
 
     JOURNEE EN 16 ACTIVITES = 7H = 7x60 A PEU PRES 400 MINUTES
-        MATIN 1
+        MATIN 1 (100 MINUTES)
     * 10%
     * 20%
     * 30%
     * 40%
-        MATIN 2
+        MATIN 2 (100 MINUTES)
     * 10%
     * 20%
     * 30%
     * 40%
-        APRES-MIDI 1
+        APRES-MIDI 1 (100 MINUTES)
     * 10%
     * 20%
     * 30%
     * 40%
-        APRES-MIDI 2
+        APRES-MIDI 2 (100 MINUTES)
     * 10%
     * 20%
     * 30%
