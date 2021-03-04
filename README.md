@@ -139,6 +139,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
     10H45-11H00     PAUSE
     12H00-12H15     E4/ GAMELOC (clément, florent, kristofer, olivier)
     13H00-14H00     DEJEUNER
+    14H30-14H45     E3/ FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
     15H30-15H45     GOUTER
     16H15-16H30     E1/ GEEKANDSTART (akhmad, alexandre, ibrahim [absent], hayet, mirsoidi)
 
