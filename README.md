@@ -132,6 +132,19 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
     EQUIPE 3        FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
     EQUIPE 4        GAMELOC (clément, florent, kristofer, olivier)
 
+## vendredi 05/03
+
+    09H15-09H30     E4/ GAMELOC (clément, florent, kristofer, olivier)
+    09H30-09H45     E3/ FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
+    10H45-11H00     PAUSE
+    11H00-11H15     E2/ SPORTIN (bruno, mathieu, sophie, yanis)
+    13H00-14H00     DEJEUNER
+    14H30-15H00     E4/ GAMELOC (clément, florent, kristofer, olivier)
+    15H30-15H45     GOUTER
+
+    A CONFIRMER:
+    16H15-16H30     E1/ GEEKANDSTART (akhmad, alexandre, ibrahim [absent], hayet, mirsoidi)
+
 ## jeudi 04/03
 
     09H15-09H30     E3/ FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
