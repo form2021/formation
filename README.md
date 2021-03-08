@@ -125,12 +125,33 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?D2D293764EFA50C60C1E5C7D0
     SUR LE TEMPS DISPONIBLE
     => VOUS POUVEZ DEMANDER DE L'AIDE EN EQUIPE OU EN INDIVIDUEL
 
-## EQUIPES
+## EQUIPES (ET ORDRE DE PASSAGE INDICATIF)
+
+    DEBUT A 09H
+    ...
+
 
     EQUIPE 1        GEEKANDSTART (akhmad, alexandre, ben hagi, hayet, mirsoidi)
     EQUIPE 2        SPORTIN (bruno, mathieu, sophie, yanis)
     EQUIPE 3        FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
     EQUIPE 4        GAMELOC (clément, florent, kristofer, olivier)
+
+## mardi 09/03
+
+    09H30-10H00     E2/ SPORTIN (bruno, mathieu, sophie, yanis)
+    10H45-11H00     PAUSE
+    13H00-14H00     DEJEUNER
+    15H30-15H45     GOUTER
+
+## lundi 08/03
+
+    09H30-10H00     E2/ SPORTIN (bruno, mathieu, sophie, yanis)
+    10H00-10H30     E3/ FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
+    10H45-11H00     PAUSE
+    13H00-14H00     DEJEUNER
+    14H30-15H00     E4/ GAMELOC (clément, florent, kristofer, olivier)
+    15H30-15H45     GOUTER
+    16H45-17H00     E3/ FIVE TASTIC (doriane, johnny, kevin, leila, nicolas)
 
 ## vendredi 05/03
 
